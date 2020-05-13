@@ -1,0 +1,172 @@
+themes:
+  light:
+    logo: datasketch
+    logo_position: right
+    palette_colors: ~
+    background_color: '#fafafa'
+    na_color: '#bec7d0'
+    branding_background_color: ''
+    text_size: ''
+    text_family: IBM Plex Sans
+    text_color: '#293845'
+    title_color: '#293845'
+    title_align: left
+    title_family: IBM Plex Sans
+    title_size: 21
+    title_weight: 700
+    subtitle_color: '#293845'
+    subtitle_align: left
+    subtitle_family: IBM Plex Sans
+    subtitle_size: 21
+    subtitle_weight: 400
+    caption_color: '#293845'
+    caption_align: left
+    caption_family: IBM Plex Sans
+    caption_size: 17
+    caption_weight: 400
+    line_color: '#8395a6'
+    line_size: 1
+    grid_color: '#bec7d0'
+    grid_line_type: solid
+  dark:
+    logo: datasketch
+    logo_position: right
+    palette_colors: ~
+    background_color: '#2e2e2e'
+    na_color: '#979797'
+    branding_background_color: ''
+    text_size: ''
+    text_family: IBM Plex Sans
+    text_color: '#ffffff'
+    title_color: '#ffffff'
+    title_align: left
+    title_family: IBM Plex Sans
+    title_size: 21
+    title_weight: 700
+    subtitle_color: '#ffffff'
+    subtitle_align: left
+    subtitle_family: IBM Plex Sans
+    subtitle_size: 21
+    subtitle_weight: 400
+    caption_color: '#ffffff'
+    caption_align: left
+    caption_family: IBM Plex Sans
+    caption_size: 17
+    caption_weight: 400
+    line_color: '#979797'
+    line_size: 1
+    grid_color: '#979797'
+    grid_line_type: solid
+palettes:
+  light:
+    main:
+      name: Main
+      type: Categorical
+      colors:
+      - '#e334a9'
+      - '#3d2e79'
+      - '#c68df8'
+      - '#59e1da'
+      - '#ff931a'
+      - '#ffe564'
+      - '#8ad050'
+    sequential:
+      name: Sequential 1
+      type: Sequential
+      colors:
+      - '#bfffff'
+      - '#c7e0ff'
+      - '#cbc0fe'
+      - '#cd9ffd'
+      - '#cb7cfc'
+      - '#c854fa'
+      - '#c200f8'
+    sequential2:
+      name: Sequential 2
+      type: Sequential
+      colors:
+      - '#69efe8'
+      - '#7ed3e8'
+      - '#8ab6e7'
+      - '#9199e6'
+      - '#947ae4'
+      - '#9359e2'
+      - '#902ee0'
+    divergent:
+      name: Divergent 1
+      type: Divergent
+      colors:
+      - '#59e1da'
+      - '#9ae8e4'
+      - '#cbefed'
+      - '#f7f5f7'
+      - '#e6befb'
+      - '#d086fe'
+      - '#b346ff'
+    divergent2:
+      name: Divergent 2
+      type: Divergent
+      colors:
+      - '#fc2cb3'
+      - '#ff83ca'
+      - '#ffbee0'
+      - '#f7f5f7'
+      - '#d5b0fa'
+      - '#ab6afa'
+      - '#7106f7'
+  dark:
+    main:
+      name: Main
+      type: Categorical
+      colors:
+      - '#f448c6'
+      - '#6b28b4'
+      - '#d29fff'
+      - '#59e1da'
+      - '#ff9049'
+      - '#ffe956'
+      - '#94d555'
+    sequential:
+      name: Sequential 1
+      type: Sequential
+      colors:
+      - '#bfffff'
+      - '#c0deff'
+      - '#bfbdff'
+      - '#ba9cff'
+      - '#b378ff'
+      - '#a851ff'
+      - '#9b0cff'
+    sequential2:
+      name: Sequential 1
+      type: Sequential
+      colors:
+      - '#59e1da'
+      - '#67c5dc'
+      - '#6da8dd'
+      - '#6e8cde'
+      - '#6b6fde'
+      - '#6350de'
+      - '#572bdd'
+    divergent:
+      name: Divergent 1
+      type: Divergent
+      colors:
+      - '#59e1da'
+      - '#9ae8e4'
+      - '#cbefed'
+      - '#f7f5f7'
+      - '#e6befb'
+      - '#d086fe'
+      - '#b346ff'
+    divergent2:
+      name: Divergent 2
+      type: Deivergent
+      colors:
+      - '#fc2cb3'
+      - '#ff83ca'
+      - '#ffbee0'
+      - '#f7f5f7'
+      - '#d5b0fa'
+      - '#ab6afa'
+      - '#7106f7'

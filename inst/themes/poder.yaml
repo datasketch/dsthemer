@@ -1,0 +1,172 @@
+themes:
+  light:
+    logo: ''
+    logo_position: right
+    palette_colors: ~
+    background_color: '#fafafa'
+    na_color: '#cbcdcf'
+    branding_background_color: ''
+    text_size: ''
+    text_family: Fira Sans Condensed
+    text_color: '#2d3b42'
+    title_color: '#2d3b42'
+    title_align: left
+    title_family: Fira Sans Condensed
+    title_size: 21
+    title_weight: 700
+    subtitle_color: '#2d3b42'
+    subtitle_align: left
+    subtitle_family: Fira Sans Condensed
+    subtitle_size: 21
+    subtitle_weight: 400
+    caption_color: '#2d3b42'
+    caption_align: left
+    caption_family: Fira Sans Condensed
+    caption_size: 17
+    caption_weight: 400
+    line_color: '#899195'
+    line_size: 1
+    grid_color: '#bcc0c2'
+    grid_line_type: solid
+  dark:
+    logo: ''
+    logo_position: right
+    palette_colors: ~
+    background_color: '#20292E'
+    na_color: '#cbcdcf'
+    branding_background_color: ''
+    text_size: ''
+    text_family: Fira Sans Condensed
+    text_color: '#ffffff'
+    title_color: '#ffffff'
+    title_align: left
+    title_family: Fira Sans Condensed
+    title_size: 21
+    title_weight: 700
+    subtitle_color: '#ffffff'
+    subtitle_align: left
+    subtitle_family: Fira Sans Condensed
+    subtitle_size: 21
+    subtitle_weight: 400
+    caption_color: '#ffffff'
+    caption_align: left
+    caption_family: Fira Sans Condensed
+    caption_size: 17
+    caption_weight: 400
+    line_color: '#899195'
+    line_size: 1
+    grid_color: '#bcc0c2'
+    grid_line_type: solid
+palettes:
+  light:
+    main:
+      name: Main
+      type: Categorical
+      colors:
+      - '#2e64a2'
+      - '#58cdcc'
+      - '#b9e28c'
+      - '#2ba070'
+      - '#f4982e'
+      - '#c372d6'
+      - '#4a3a5f'
+    sequential:
+      name: Sequential 1
+      type: Sequential
+      colors:
+      - '#ebfed2'
+      - '#c4e3cb'
+      - '#9ec8c5'
+      - '#77adbe'
+      - '#5192b8'
+      - '#2a76b1'
+      - '#0059aa'
+    sequential2:
+      name: Sequential 2
+      type: Sequential
+      colors:
+      - '#e3fff4'
+      - '#c8dbdb'
+      - '#aeb9c2'
+      - '#9497aa'
+      - '#7b7693'
+      - '#63577d'
+      - '#4c3867'
+    divergent:
+      name: Divergent 1
+      type: Deivergent
+      colors:
+      - '#34c0c0'
+      - '#79d3d3'
+      - '#b6e3e4'
+      - '#eff2f4'
+      - '#d6e8ca'
+      - '#bddd9e'
+      - '#a3d271'
+    divergent2:
+      name: Divergent 2
+      type: Deivergent
+      colors:
+      - '#037daa'
+      - '#56a6c4'
+      - '#a3cddc'
+      - '#eff2f4'
+      - '#f4ddbe'
+      - '#f9c683'
+      - '#ffac42'
+  dark:
+    main:
+      name: Marin
+      type: Categorical
+      colors:
+      - '#58cdcc'
+      - '#3676C0'
+      - '#b9e28c'
+      - '#2ba070'
+      - '#f4982e'
+      - '#c372d6'
+      - '#e9d8ff'
+    sequential:
+      name: Sequential 1
+      type: Sequential
+      colors:
+      - '#8bfed6'
+      - '#74e1d3'
+      - '#5dc5d0'
+      - '#46a9cd'
+      - '#308dca'
+      - '#1870c7'
+      - '#0052c4'
+    sequential2:
+      name: Sequential 2
+      type: Sequential
+      colors:
+      - '#f4ceff'
+      - '#ddbcfe'
+      - '#c5aafd'
+      - '#ab98fb'
+      - '#8f87fa'
+      - '#6f77f8'
+      - '#4467f6'
+    divergent:
+      name: Divergent 1
+      type: Deivergent
+      colors:
+      - '#34c0c0'
+      - '#79d3d3'
+      - '#b6e3e4'
+      - '#eff2f4'
+      - '#d6e8ca'
+      - '#bddd9e'
+      - '#a3d271'
+    divergent2:
+      name: Divergent 2
+      type: Deivergent
+      colors:
+      - '#03adc8'
+      - '#5ec7d9'
+      - '#aadee7'
+      - '#eff2f4'
+      - '#f4ddbe'
+      - '#f9c683'
+      - '#ffac42'
