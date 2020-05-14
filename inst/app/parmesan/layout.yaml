@@ -65,7 +65,7 @@ axis:
     - axis_title_color
     - axis_title_size
     - axis_line_color
-    - axis_line_width
+    - axis_line_size
     - axis_ticks_color
     - axis_tick_length
 
@@ -75,13 +75,13 @@ grids:
 # GRID X
     - grid_x_enabled
     - grid_x_color
-    - grid_x_width
-    - grid_x_dash
+    - grid_x_size
+    - grid_x_line_type
   # GRID Y
     - grid_y_enabled
     - grid_y_color
-    - grid_y_width
-    - grid_y_dash
+    - grid_y_size
+    - grid_y_line_type
 
 areas:
   label: areas
@@ -95,7 +95,7 @@ areas:
   # SPACE INTO AXIS (PLOT AREA)
     - plot_background_color
     - plot_border_color
-    - plot_border_width
+    - plot_border_size
 
 dataLabels:
   label: dataLabels

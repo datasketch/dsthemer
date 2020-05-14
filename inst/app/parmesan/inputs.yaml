@@ -244,11 +244,11 @@ axis_line_color:
   input_params:
     label: axis_line_color
     colors: '#DDDDF9'
-axis_line_width:
+axis_line_size:
   show: true
   input_type: numericInput
   input_params:
-    label: axis_line_width
+    label: axis_line_size
     value: 1
 axis_ticks_color:
   show: true
@@ -276,19 +276,19 @@ grid_x_color:
   input_params:
     label: grid_x_color
     colors: "#fafafa" 
-grid_x_width:
+grid_x_size:
   show: true
   input_type: numericInput 
   input_params:
-    label: grid_x_width
-    value: 0
-grid_x_dash:
+    label: grid_x_size
+    value: 0.5
+grid_x_line_type:
   show: true
   input_type: selectInput
   input_params:
-    label: grid_y_dash
-    choices: ["dot","dash"]
-    selected: "dot"
+    label: grid_y_line_type
+    choices: ["solid","dotted","dashed"]
+    selected: "solid"
 
 # GRID Y
 grid_y_enabled:
@@ -303,19 +303,19 @@ grid_y_color:
   input_params:    
     label: grid_y_color
     colors: "#DDDDF9"
-grid_y_width:
+grid_y_size:
   show: true
   input_type: numericInput
   input_params:
-    label: grid_y_width
-    value: 1
-grid_y_dash:
+    label: grid_y_size
+    value: 0.5
+grid_y_line_type:
   show: true
   input_type: selectInput
   input_params:
-    label: grid_y_dash
-    choices: ["dot","dash"]
-    selected: "dot"
+    label: grid_y_line_type
+    choices: ["solid","dotted","dashed"]
+    selected: "solid"
 
 
 
@@ -358,11 +358,11 @@ plot_border_color:
   input_params:
     label: plot_border_color
     colors: "#CCCCCC"
-plot_border_width:
+plot_border_size:
   show: true
   input_type: numericInput
   input_params:
-    label: plot_border_width
+    label: plot_border_size
     value: 0
 
 
