@@ -21,3 +21,6 @@ vignettes/*.pdf
 #*.Rproj
 .Rproj.user
 
+data-raw/fonts-master.zip
+fonts-master
+

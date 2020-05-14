@@ -96,14 +96,14 @@ branding_background_color:
   input_params:
     label: branding_background_color
     colors: "CDCF44"
-accent_color:
+branding_accent_color:
   show: true
   show_if: 
     branding_include:
       equals: TRUE
   input_type: colorPaletteInput
   input_params:
-    label: accent_color
+    label: branding_accent_color
     colors: "#d2a045"
 
 # GENERAL STYLES
@@ -125,7 +125,7 @@ text_family:
   input_type: selectizeInput
   input_params:
     label: text_family
-    choices: ['Arial', 'Ubuntu', 'Times new roman']
+    choices: available_fonts()
     selected: "Ubuntu"
 
 line_color:
@@ -161,8 +161,8 @@ title_family:
   show: true
   input_type: selectInput
   input_params:
-    label: text_family
-    choices: ['Arial', 'Ubuntu', 'Times new roman','Montserrat']
+    label: title_family
+    choices: available_fonts()
     selected: "Ubuntu"
 title_size:
   show: true
@@ -415,7 +415,7 @@ legend_family:
   input_type: selectInput
   input_params:
     label: legend_family
-    choices: ['Arial', 'Ubuntu', 'Times news roman']
+    choices: available_fonts()
     selected: "Montserrat"
 legend_size:
   show: true

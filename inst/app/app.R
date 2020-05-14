@@ -65,6 +65,8 @@ server <-  function(input, output, session) {
   observeEvent(input$parmesan_updated, {
     add_color_codes_box("palette_colors")
     add_color_codes_box("background_color")
+    add_color_codes_box("branding_background_color")
+    add_color_codes_box("branding_accent_color")
     add_color_codes_box("text_color")
     add_color_codes_box("title_color")
     add_color_codes_box("subtitle_color")

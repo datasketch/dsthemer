@@ -26,7 +26,7 @@ branding:
     - logo_position
     - branding_text
     - branding_background_color
-    - accent_color
+    # - branding_accent_color
 
   # GENERAL STYLES
 texts:
