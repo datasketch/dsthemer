@@ -1,8 +1,11 @@
 
-get_theme <- function(org, theme = NULL, palette = NULL){
+#' @export
+theme_get <- function(org, theme = NULL, palette = NULL){
+  if(!org %in% org_theme_list())
+    stop("org doesn't have a defined theme")
   l <- load_theme_yaml(org)
   first_theme_name <- names(l$themes)[1]
-  theme <- theme %||% first_theme
+  theme <- theme %||% first_theme_name
   available_themes <- names(l$themes)
   if(!theme %in% available_themes)
     stop("Theme does not exist for this org. Try one of: ",
@@ -14,30 +17,52 @@ get_theme <- function(org, theme = NULL, palette = NULL){
   thm
 }
 
-get_org_themes <- function(org){
+#' @export
+theme_list <- function(org){
   l <- load_theme_yaml(org)
   names(l$themes)
 }
 
-get_org_palettes <- function(org, theme){
+#' @export
+theme_palettes <- function(org, theme, type = NULL){
   l <- load_theme_yaml(org)
   x <- names(l$palettes[[theme]])
   names(x) <- unlist(lapply(l$palettes[[theme]], function(x) x$name))
-  x
+  if(is.null(type)){
+    return(x)
+  } else{
+    thm <- l$palettes[[theme]]
+    thm <- Filter(function(x){ x$type == type}, thm)
+    nms <- unlist(lapply(thm, function(x) x$name))
+    x <- names(thm)
+    names(x) <- nms
+    return(x)
+  }
 }
 
-get_org_palette <- function(org, theme, palette){
+#' @export
+theme_palette <- function(org, theme, palette){
   l <- load_theme_yaml(org)
   l$palettes[[theme]][[palette]]$colors
 }
 
+#' @export
+org_theme_list <- function(){
+  file_path_sans_ext(list.files(system.file("themes", package = "dsthemer")))
+}
+
 
 load_theme_yaml <- function(org){
-  themes_path <- system.file("themes", package = "dsthemes")
+  themes_path <- system.file("themes", package = "dsthemer")
   all_orgs <- file_path_sans_ext(list.files(themes_path))
   if(!org %in% all_orgs)
     stop("Org does not exists, must be one of: ", paste(all_orgs, collapse = ", "))
   # load org yaml
   yaml::yaml.load_file(file.path(themes_path, paste0(org, ".yaml")))
 }
+
+
+
+
+
 

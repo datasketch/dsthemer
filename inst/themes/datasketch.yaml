@@ -161,7 +161,7 @@ palettes:
       - '#b346ff'
     divergent2:
       name: Divergent 2
-      type: Deivergent
+      type: Divergent
       colors:
       - '#fc2cb3'
       - '#ff83ca'

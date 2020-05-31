@@ -52,6 +52,7 @@ background_color:
   input_params:
     label: background_color
     colors: "#DDDFDC"
+    max_colors: 1
 
 branding_include:
   show: true
@@ -96,6 +97,7 @@ branding_background_color:
   input_params:
     label: branding_background_color
     colors: "CDCF44"
+    max_colors: 1
 branding_accent_color:
   show: true
   show_if: 
@@ -105,6 +107,7 @@ branding_accent_color:
   input_params:
     label: branding_accent_color
     colors: "#d2a045"
+    max_colors: 1
 
 # GENERAL STYLES
 
@@ -120,6 +123,7 @@ text_color:
   input_params:
     label: text_color
     colors: "#6D8089"
+    max_colors: 1
 text_family:
   show: true
   input_type: selectizeInput
@@ -134,6 +138,7 @@ line_color:
   input_params:
     label: line_color
     colors: "#DDDDF9"
+    max_colors: 1
 
 line_size:
   show: true
@@ -149,6 +154,7 @@ title_color:
   input_params:
     label: title_color
     colors: "#444444"
+    max_colors: 1
 
 title_align:
   show: true
@@ -185,6 +191,7 @@ subtitle_color:
   input_params:
     label: subtitle_color
     colors: "#999999"
+    max_colors: 1
 subtitle_align:
   show: true
   input_type: selectInput
@@ -212,6 +219,7 @@ caption_color:
   input_params:
     label: caption_color
     colors: "#AAAAAA"
+    max_colors: 1
 caption_align:
   show: true
   input_type: selectInput
@@ -232,6 +240,7 @@ axis_title_color:
   input_params:
     label: axis_title_color
     colors: '#5A6B72'
+    max_colors: 1
 axis_title_size:
   show: true
   input_type: numericInput
@@ -244,6 +253,7 @@ axis_line_color:
   input_params:
     label: axis_line_color
     colors: '#DDDDF9'
+    max_colors: 1
 axis_line_size:
   show: true
   input_type: numericInput
@@ -256,6 +266,7 @@ axis_ticks_color:
   input_params:
     label: axis_ticks_color
     colors: '#DDDDF9'
+    max_colors: 1
 axis_tick_length:
   show: true
   input_type: numericInput
@@ -276,6 +287,7 @@ grid_x_color:
   input_params:
     label: grid_x_color
     colors: "#fafafa" 
+    max_colors: 1
 grid_x_size:
   show: true
   input_type: numericInput 
@@ -303,6 +315,7 @@ grid_y_color:
   input_params:    
     label: grid_y_color
     colors: "#DDDDF9"
+    max_colors: 1
 grid_y_size:
   show: true
   input_type: numericInput
@@ -358,6 +371,7 @@ plot_border_color:
   input_params:
     label: plot_border_color
     colors: "#CCCCCC"
+    max_colors: 1
 plot_border_size:
   show: true
   input_type: numericInput
@@ -378,6 +392,7 @@ dataLabels_color:
   input_params:
     label: dataLabels_color
     colors: NULL
+    max_colors: 1
 label_color:
   show: true
   input_type: textInput

@@ -150,7 +150,7 @@ palettes:
       - '#4467f6'
     divergent:
       name: Divergent 1
-      type: Deivergent
+      type: Divergent
       colors:
       - '#34c0c0'
       - '#79d3d3'
@@ -161,7 +161,7 @@ palettes:
       - '#a3d271'
     divergent2:
       name: Divergent 2
-      type: Deivergent
+      type: Divergent
       colors:
       - '#03adc8'
       - '#5ec7d9'

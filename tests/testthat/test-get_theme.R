@@ -1,13 +1,27 @@
 test_that("Get theme", {
 
+  org_theme_list()
+
+
   org <- "datasketch"
-  get_theme("datasketch")
+  theme_get("datasketch")
+  theme_list("datasketch")
+
+  theme_get("poder")
+  theme_get("poder", theme = "dark", palette = "divergent")
+  theme_palettes("poder", "dark")
+  theme_palette("poder", theme = "light", palette = "main")
+
+  theme_get("dialogos")
+  theme_get("dialogos", theme = "dark", palette = "divergent")
+  theme_palettes("dialogos", theme = "light")
+  theme_palettes("dialogos", theme = "light", type = "Categorical")
+  theme_palettes("dialogos", theme = "light", type = "Sequential")
+  theme_palettes("dialogos", theme = "light", type = "Divergent")
+
+  theme_palette("dialogos", theme = "light", palette = "main")
 
 
-  get_theme("poder")
-  get_theme("poder", theme = "dark", palette = "divergent")
-  get_org_palettes("poder", "dark")
-  get_org_palette("poder","light","main")
 
 })
 
