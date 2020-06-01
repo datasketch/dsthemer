@@ -14,6 +14,12 @@ test_that("Get theme", {
 
   theme_get("dialogos")
   theme_get("dialogos", theme = "dark", palette = "divergent")
+
+  th <- theme_get("dialogos", theme = "light")
+  expect_true(file.exists(th$logo))
+  th <- theme_get("dialogos", theme = "dark")
+  expect_true(grepl("dialogos/dark.png$",th$logo))
+
   theme_palettes("dialogos", theme = "light")
   theme_palettes("dialogos", theme = "light", type = "Categorical")
   theme_palettes("dialogos", theme = "light", type = "Sequential")
