@@ -29,6 +29,7 @@ themes:
     grid_color: '#dddfe0'
     grid_size: 0.8
     grid_line_type: solid
+    legend_color: '#2e3b42'
   dark:
     logo: ''
     logo_position: right
@@ -59,6 +60,7 @@ themes:
     grid_color: '#dddfe0'
     grid_size: 0.8
     grid_line_type: solid
+    legend_color: '#ffffff'
 palettes:
   light:
     main:
