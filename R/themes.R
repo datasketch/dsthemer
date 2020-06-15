@@ -14,6 +14,8 @@ theme_get <- function(org, theme = NULL, palette = NULL){
   first_palette_name <- names(l$palettes[[1]])[1]
   palette <- palette %||% first_palette_name
   thm$palette_colors <- l$palettes[[theme]][[palette]]$colors
+  if(!is.null(theme))
+    thm$logo <- theme_logo(org, theme)
   thm
 }
 
@@ -51,6 +53,10 @@ org_theme_list <- function(){
   file_path_sans_ext(list.files(system.file("themes", package = "dsthemer")))
 }
 
+
+theme_logo <- function(org, theme){
+  system.file(file.path("logos",org, paste0(theme, ".png")), package = "dsthemer")
+}
 
 load_theme_yaml <- function(org){
   themes_path <- system.file("themes", package = "dsthemer")
