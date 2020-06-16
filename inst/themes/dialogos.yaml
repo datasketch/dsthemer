@@ -2,6 +2,7 @@ themes:
   light:
     logo: ''
     logo_position: right
+    branding_include: false
     palette_colors: ~
     background_color: '#fafafa'
     na_color: '#bfc3c5'
@@ -33,6 +34,7 @@ themes:
   dark:
     logo: ''
     logo_position: right
+    branding_include: true
     palette_colors: ~
     background_color: '#242e33'
     na_color: '#bfc3c5'

@@ -5,6 +5,7 @@ themes:
     palette_colors: ~
     background_color: '#fafafa'
     na_color: '#cbcdcf'
+    branding_include: false
     branding_background_color: ''
     text_size: ''
     text_family: Fira Sans Condensed
@@ -32,6 +33,7 @@ themes:
     logo: ''
     logo_position: right
     palette_colors: ~
+    branding_include: true
     background_color: '#20292E'
     na_color: '#cbcdcf'
     branding_background_color: ''

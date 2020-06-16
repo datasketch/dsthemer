@@ -3,6 +3,7 @@ themes:
     logo: datasketch
     logo_position: right
     palette_colors: ~
+    branding_include: false
     background_color: '#fafafa'
     na_color: '#bec7d0'
     branding_background_color: ''
@@ -31,6 +32,7 @@ themes:
   dark:
     logo: datasketch
     logo_position: right
+    branding_include: true
     palette_colors: ~
     background_color: '#2e2e2e'
     na_color: '#979797'
