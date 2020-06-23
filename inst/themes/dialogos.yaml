@@ -2,32 +2,32 @@ themes:
   light:
     logo: ''
     logo_position: right
-    branding_include: false
     palette_colors: ~
+    branding_include: true
     background_color: '#fafafa'
     na_color: '#bfc3c5'
     branding_background_color: ''
     text_size: ''
-    text_family: Barlow Bold
+    text_family: Barlow
     text_color: '#2e3b42'
-    title_color: '#2d3b42'
+    title_color: '#2e3b42'
     title_align: left
-    title_family: Barlow Bold
+    title_family: Barlow
     title_size: 21
     title_weight: 700
-    subtitle_color: '#2d3b42'
+    subtitle_color: '#2e3b42'
     subtitle_align: left
-    subtitle_family: Barlow Regular
+    subtitle_family: Barlow
     subtitle_size: 21
     subtitle_weight: 400
-    caption_color: '#2d3b42'
+    caption_color: '#2e3b42'
     caption_align: left
-    caption_family: Barlow Regular
+    caption_family: Barlow
     caption_size: 17
     caption_weight: 400
     line_color: '#80878c'
     line_size: 1
-    grid_color: '#dddfe0'
+    grid_color: '#bababa'
     grid_size: 0.8
     grid_line_type: solid
     legend_color: '#2e3b42'
@@ -40,26 +40,26 @@ themes:
     na_color: '#bfc3c5'
     branding_background_color: ''
     text_size: ''
-    text_family: Barlow Regular
+    text_family: Barlow
     text_color: '#ffffff'
     title_color: '#ffffff'
     title_align: left
-    title_family: Barlow Regular
+    title_family: Barlow
     title_size: 21
     title_weight: 700
     subtitle_color: '#ffffff'
     subtitle_align: left
-    subtitle_family: Barlow Regular
+    subtitle_family: Barlow
     subtitle_size: 21
     subtitle_weight: 400
     caption_color: '#ffffff'
     caption_align: left
-    caption_family: Barlow Regular
+    caption_family: Barlow
     caption_size: 17
     caption_weight: 400
     line_color: '#80878c'
     line_size: 1
-    grid_color: '#dddfe0'
+    grid_color: '#bababa'
     grid_size: 0.8
     grid_line_type: solid
     legend_color: '#ffffff'
@@ -76,103 +76,15 @@ palettes:
       - '#5a54d3'
       - '#df6cef'
       - '#e9c3f8'
-    sequential:
-      name: Sequential 1
-      type: Sequential
-      colors:
-      - '#ebfed2'
-      - '#c4e3cb'
-      - '#9ec8c5'
-      - '#77adbe'
-      - '#5192b8'
-      - '#2a76b1'
-      - '#0059aa'
-    sequential2:
-      name: Sequential 2
-      type: Sequential
-      colors:
-      - '#cffff3'
-      - '#b1f3d9'
-      - '#a1e4ce'
-      - '#8dd5ca'
-      - '#73c6c8'
-      - '#51b8c9'
-      - '#00aacb'
-    divergent:
-      name: Divergent 1
-      type: Divergent
-      colors:
-      - '#f5d8fb'
-      - '#ebbbf6'
-      - '#d3a4ee'
-      - '#aa96e2'
-      - '#7988d7'
-      - '#5d72d2'
-      - '#5a54d3'
-    divergent2:
-      name: Divergent 2
-      type: Divergent
-      colors:
-      - '#0c95ba'
-      - '#509aa8'
-      - '#8acbca'
-      - '#eff2f4'
-      - '#b4e2bd'
-      - '#82ce86'
-      - '#62b64b'
   dark:
     main:
       name: Marin
       type: Categorical
       colors:
-      - '#0ca9d3'
+      - '#0c95ba'
       - '#517589'
       - '#02dbc4'
       - '#adfbe2'
       - '#5a54d3'
       - '#df6cef'
       - '#f0ccff'
-    sequential:
-      name: Sequential 1
-      type: Sequential
-      colors:
-      - '#cffff3'
-      - '#b1f3d9'
-      - '#a1e4ce'
-      - '#8dd5ca'
-      - '#73c6c8'
-      - '#51b8c9'
-      - '#00aacb'
-    sequential2:
-      name: Sequential 2
-      type: Sequential
-      colors:
-      - '#f5d8fb'
-      - '#ebbbf6'
-      - '#d3a4ee'
-      - '#aa96e2'
-      - '#7988d7'
-      - '#5d72d2'
-      - '#5a54d3'
-    divergent:
-      name: Divergent 1
-      type: Deivergent
-      colors:
-      - '#0c95ba'
-      - '#55b9c6'
-      - '#98d9d8'
-      - '#eff2f4'
-      - '#e8c7f5'
-      - '#d79ef7'
-      - '#a083fb'
-    divergent2:
-      name: Divergent 2
-      type: Deivergent
-      colors:
-      - '#2c6989'
-      - '#509aa8'
-      - '#8acbca'
-      - '#eff2f4'
-      - '#b4e2bd'
-      - '#82ce86'
-      - '#62b64b'
