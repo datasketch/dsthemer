@@ -1,64 +1,78 @@
 themes:
   light:
+    #plot_margin_left: 50
+    #plot_margin_right: 50
+    #plot_margin_top: 30
     logo: ''
     logo_position: right
+    logo_width: 70
+    branding_include: true
     palette_colors: ~
     background_color: '#fafafa'
     na_color: '#cbcdcf'
-    branding_include: false
     branding_background_color: ''
-    text_size: ''
-    text_family: Fira Sans Condensed
+    text_size: 13
+    text_family: Roboto Condensed
     text_color: '#2d3b42'
     title_color: '#2d3b42'
     title_align: left
-    title_family: Fira Sans Condensed
-    title_size: 21
+    title_family: Roboto Condensed
+    title_size: 19
     title_weight: 700
     subtitle_color: '#2d3b42'
     subtitle_align: left
-    subtitle_family: Fira Sans Condensed
-    subtitle_size: 21
+    subtitle_family: Roboto Condensed
+    subtitle_size: 15
     subtitle_weight: 400
     caption_color: '#2d3b42'
     caption_align: left
-    caption_family: Fira Sans Condensed
-    caption_size: 17
+    caption_family: Roboto Condensed
+    caption_size: 15
     caption_weight: 400
     line_color: '#899195'
-    line_size: 1
+    axis_line_size: 1
+    axis_line_color: '#899195'
     grid_color: '#bcc0c2'
-    grid_line_type: solid
+    grid_size: 0.8
+    grid_line_type: ShortDash
+    legend_color: '#2d3b42'
   dark:
+    #plot_margin_left: 50
+    #plot_margin_right: 50
+    #plot_margin_top: 30
     logo: ''
     logo_position: right
-    palette_colors: ~
+    logo_width: 70
     branding_include: true
+    palette_colors: ~
     background_color: '#20292E'
     na_color: '#cbcdcf'
     branding_background_color: ''
-    text_size: ''
-    text_family: Fira Sans Condensed
+    text_size: 13
+    text_family: Roboto Condensed
     text_color: '#ffffff'
     title_color: '#ffffff'
     title_align: left
-    title_family: Fira Sans Condensed
-    title_size: 21
+    title_family: Roboto Condensed
+    title_size: 19
     title_weight: 700
     subtitle_color: '#ffffff'
     subtitle_align: left
-    subtitle_family: Fira Sans Condensed
-    subtitle_size: 21
+    subtitle_family: Roboto Condensed
+    subtitle_size: 15
     subtitle_weight: 400
     caption_color: '#ffffff'
     caption_align: left
-    caption_family: Fira Sans Condensed
-    caption_size: 17
+    caption_family: Roboto Condensed
+    caption_size: 15
     caption_weight: 400
     line_color: '#899195'
-    line_size: 1
+    axis_line_size: 1
+    axis_line_color: '#899195'
     grid_color: '#bcc0c2'
-    grid_line_type: solid
+    grid_size: 0.8
+    grid_line_type: ShortDash
+    legend_color: '#ffffff'
 palettes:
   light:
     main:

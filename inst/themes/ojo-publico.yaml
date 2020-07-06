@@ -1,68 +1,76 @@
 themes:
   light:
+    #plot_margin_left: 50
+    #plot_margin_right: 50
+    #plot_margin_top: 30
     logo: ''
     logo_position: right
-    palette_colors: ~
     branding_include: true
-    background_color: '#ffffff'
-    na_color: '#bfc3c5'
+    palette_colors: ~
+    background_color: '#fafafa'
+    na_color: '#cccccc'
     branding_background_color: ''
-    text_size: ''
+    text_size: 14
     text_family: Nunito Sans
-    text_color: '#2e3b42'
+    text_color: '#333333'
     title_color: '#333333'
     title_align: left
     title_family: Nunito Sans
-    title_size: 21
+    title_size: 19
     title_weight: 700
     subtitle_color: '#333333'
     subtitle_align: left
     subtitle_family: Nunito Sans
-    subtitle_size: 21
+    subtitle_size: 15
     subtitle_weight: 400
     caption_color: '#333333'
     caption_align: left
     caption_family: Nunito Sans
-    caption_size: 17
+    caption_size: 15
     caption_weight: 400
-    line_color: '#80878c'
-    line_size: 1
-    grid_color: '#bababa'
+    line_color: '#a0a0a0'
+    axis_line_size: 1
+    axis_line_color: '#a0a0a0'
+    grid_color: '#bcbcbc'
     grid_size: 0.8
-    grid_line_type: solid
-    legend_color: '#2e3b42'
+    grid_line_type: Dot
+    legend_color: '#333333'
   dark:
+    #plot_margin_left: 50
+    #plot_margin_right: 50
+    #plot_margin_top: 30
     logo: ''
     logo_position: right
     branding_include: true
     palette_colors: ~
-    background_color: '#333333'
-    na_color: '#bfc3c5'
+    background_color: '#fafafa'
+    na_color: '#cccccc'
     branding_background_color: ''
-    text_size: ''
+    text_size: 14
     text_family: Nunito Sans
-    text_color: '#ffffff'
-    title_color: '#ffffff'
+    text_color: '#333333'
+    title_color: '#333333'
     title_align: left
     title_family: Nunito Sans
-    title_size: 21
+    title_size: 19
     title_weight: 700
-    subtitle_color: '#ffffff'
+    subtitle_color: '#333333'
     subtitle_align: left
     subtitle_family: Nunito Sans
-    subtitle_size: 21
+    subtitle_size: 15
     subtitle_weight: 400
-    caption_color: '#ffffff'
+    caption_color: '#333333'
     caption_align: left
     caption_family: Nunito Sans
-    caption_size: 17
+    caption_size: 15
     caption_weight: 400
-    line_color: '#80878c'
-    line_size: 1
-    grid_color: '#bababa'
+    line_color: '#a0a0a0'
+    axis_line_size: 1
+    axis_line_color: '#a0a0a0'
+    grid_color: '#bcbcbc'
     grid_size: 0.8
-    grid_line_type: solid
-    legend_color: '#ffffff'
+    grid_line_type: Dot
+    legend_color: '#333333'
 palettes:
   light:
     main:

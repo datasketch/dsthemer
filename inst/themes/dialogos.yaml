@@ -54,12 +54,12 @@ themes:
     title_color: '#ffffff'
     title_align: center
     title_family: Barlow
-    title_size: 17
+    title_size: 21
     title_weight: 700
     subtitle_color: '#ffffff'
     subtitle_align: center
     subtitle_family: Barlow
-    subtitle_size: 21
+    subtitle_size: 17
     subtitle_weight: 400
     caption_color: '#ffffff'
     caption_align: left
