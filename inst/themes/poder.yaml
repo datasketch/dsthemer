@@ -36,6 +36,7 @@ themes:
     grid_size: 0.8
     grid_line_type: ShortDash
     legend_color: '#2d3b42'
+    legend_family: Roboto Condensed
   dark:
     #plot_margin_left: 50
     #plot_margin_right: 50
@@ -73,6 +74,7 @@ themes:
     grid_size: 0.8
     grid_line_type: ShortDash
     legend_color: '#ffffff'
+    legend_family: Roboto Condensed
 palettes:
   light:
     main:

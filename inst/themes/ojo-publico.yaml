@@ -35,6 +35,7 @@ themes:
     grid_size: 0.8
     grid_line_type: Dot
     legend_color: '#333333'
+    legend_family: Nunito Sans
   dark:
     #plot_margin_left: 50
     #plot_margin_right: 50
@@ -43,23 +44,23 @@ themes:
     logo_position: right
     branding_include: true
     palette_colors: ~
-    background_color: '#fafafa'
+    background_color: '#20292E'
     na_color: '#cccccc'
     branding_background_color: ''
     text_size: 14
     text_family: Nunito Sans
-    text_color: '#333333'
-    title_color: '#333333'
+    text_color: '#ffffff'
+    title_color: '#ffffff'
     title_align: left
     title_family: Nunito Sans
     title_size: 19
     title_weight: 700
-    subtitle_color: '#333333'
+    subtitle_color: '#ffffff'
     subtitle_align: left
     subtitle_family: Nunito Sans
     subtitle_size: 15
     subtitle_weight: 400
-    caption_color: '#333333'
+    caption_color: '#ffffff'
     caption_align: left
     caption_family: Nunito Sans
     caption_size: 15
@@ -70,7 +71,8 @@ themes:
     grid_color: '#bcbcbc'
     grid_size: 0.8
     grid_line_type: Dot
-    legend_color: '#333333'
+    legend_color: '#FFFFFF'
+    legend_family: Nunito Sans
 palettes:
   light:
     main:
