@@ -1,0 +1,190 @@
+themes:
+  light:
+    #plot_margin_left: 50
+    #plot_margin_right: 50
+    #plot_margin_top: 30
+    logo: ''
+    logo_position: right
+    logo_width: 70
+    branding_include: true
+    palette_colors: ~
+    background_color: '#fafafa'
+    na_color: '#cbcdcf'
+    branding_background_color: ''
+    text_size: 13
+    text_family: PT Sans Narrow
+    text_color: '#232323'
+    title_color: '#232323'
+    title_align: left
+    title_family: PT Sans Narrow
+    title_size: 19
+    title_weight: 700
+    subtitle_color: '#232323'
+    subtitle_align: left
+    subtitle_family: PT Sans Narrow
+    subtitle_size: 15
+    subtitle_weight: 400
+    caption_color: '#232323'
+    caption_align: left
+    caption_family: PT Sans Narrow
+    caption_size: 15
+    caption_weight: 400
+    line_color: '#a4a4a4'
+    axis_line_size: 1
+    axis_line_color: '#a4a4a4'
+    grid_color: '#dadada'
+    grid_size: 0.8
+    grid_line_type: Dot
+    legend_color: '#232323'
+    legend_family: PT Sans Narrow
+  dark:
+    #plot_margin_left: 50
+    #plot_margin_right: 50
+    #plot_margin_top: 30
+    logo: ''
+    logo_position: right
+    logo_width: 70
+    branding_include: true
+    palette_colors: ~
+    background_color: '#232323'
+    na_color: '#cbcdcf'
+    branding_background_color: ''
+    text_size: 13
+    text_family: PT Sans Narrow
+    text_color: '#ffffff'
+    title_color: '#ffffff'
+    title_align: left
+    title_family: PT Sans Narrow
+    title_size: 19
+    title_weight: 700
+    subtitle_color: '#ffffff'
+    subtitle_align: left
+    subtitle_family: PT Sans Narrow
+    subtitle_size: 15
+    subtitle_weight: 400
+    caption_color: '#ffffff'
+    caption_align: left
+    caption_family: PT Sans Narrow
+    caption_size: 15
+    caption_weight: 400
+    line_color: '#dadada'
+    axis_line_size: 1
+    axis_line_color: '#dadada'
+    grid_color: '#646464'
+    grid_size: 0.8
+    grid_line_type: Dot
+    legend_color: '#ffffff'
+    legend_family: PT Sans Narrow
+palettes:
+  light:
+    main:
+      name: Main
+      type: Categorical
+      colors:
+      - '#1b7267'
+      - '#89c061'
+      - '#ffde5b'
+      - '#f25a3f'
+      - '#f59c2a'
+      - '#a54a8d'
+      - '#663a5d'
+    sequential:
+      name: Sequential 1
+      type: Sequential
+      colors:
+      - '#f7f4e6'
+      - '#d2e8d1'
+      - '#c9d5b8'
+      - '#cfbe9c'
+      - '#dba47f'
+      - '#e78561'
+      - '#f35d44'
+    sequential2:
+      name: Sequential 2
+      type: Sequential
+      colors:
+      - '#dafbf6'
+      - '#dafbf6'
+      - '#98c89f'
+      - '#78ad9a'
+      - '#5e9192'
+      - '#4a7586'
+      - '#395a77'
+    divergent:
+      name: Divergent 1
+      type: Deivergent
+      colors:
+      - '#50a3a5'
+      - '#57c6b3'
+      - '#86e4c7'
+      - '#f5f1f0'
+      - '#fcc59a'
+      - '#f8965c'
+      - '#f35d44'
+    divergent2:
+      name: Divergent 2
+      type: Deivergent
+      colors:
+      - '#037daa'
+      - '#56a6c4'
+      - '#a3cddc'
+      - '#eff2f4'
+      - '#f4ddbe'
+      - '#f9c683'
+      - '#ffac42'
+  dark:
+    main:
+      name: Marin
+      type: Categorical
+      colors:
+      - '#1b7267'
+      - '#89c061'
+      - '#ffde5b'
+      - '#f25a3f'
+      - '#f59c2a'
+      - '#a54a8d'
+      - '#663a5d'
+    sequential:
+      name: Sequential 1
+      type: Sequential
+      colors:
+      - '#f7f4e6'
+      - '#d2e8d1'
+      - '#c9d5b8'
+      - '#cfbe9c'
+      - '#dba47f'
+      - '#e78561'
+      - '#f35d44'
+    sequential2:
+      name: Sequential 2
+      type: Sequential
+      colors:
+      - '#dafbf6'
+      - '#dafbf6'
+      - '#98c89f'
+      - '#78ad9a'
+      - '#5e9192'
+      - '#4a7586'
+      - '#395a77'
+    divergent:
+      name: Divergent 1
+      type: Divergent
+      colors:
+      - '#50a3a5'
+      - '#57c6b3'
+      - '#86e4c7'
+      - '#f5f1f0'
+      - '#fcc59a'
+      - '#f8965c'
+      - '#f35d44'
+    divergent2:
+      name: Divergent 2
+      type: Divergent
+      colors:
+      - '#ef7824'
+      - '#f7a454'
+      - '#fbcb93'
+      - '#f5f1f0'
+      - '#deb0bc'
+      - '#bc71a0'
+      - '#93337a'
