@@ -1,0 +1,192 @@
+themes:
+  light:
+    #plot_margin_left: 50
+    #plot_margin_right: 50
+    #plot_margin_top: 30
+    logo: ''
+    logo_position: right
+    logo_width: 200
+    branding_include: true
+    palette_colors: ~
+    background_color: '#fafafa'
+    na_color: '#d3d3d4'
+    branding_background_color: ''
+    text_size: 13
+    text_family: Source Serif Pro
+    text_color: '#222526'
+    title_color: '#222526'
+    title_align: left
+    title_family: Source Serif Pro
+    title_size: 19
+    title_weight: 700
+    subtitle_color: '#222526'
+    subtitle_align: left
+    subtitle_family: Source Serif Pro
+    subtitle_size: 15
+    subtitle_weight: 400
+    caption_color: '#222526'
+    caption_align: left
+    caption_family: Source Serif Pro
+    caption_size: 15
+    caption_weight: 400
+    line_color: '#8e8f90'
+    axis_line_size: 1
+    axis_line_color: '#8e8f90'
+    grid_color: '#e6e6e7'
+    grid_size: 0.8
+    grid_line_type: Solid
+    legend_color: '#222526'
+    legend_family: Lato
+    tooltip_family: Lato
+  dark:
+    #plot_margin_left: 50
+    #plot_margin_right: 50
+    #plot_margin_top: 30
+    logo: ''
+    logo_position: right
+    logo_width: 200
+    branding_include: true
+    palette_colors: ~
+    background_color: '#222526'
+    na_color: '#cbcdcf'
+    branding_background_color: ''
+    text_size: 13
+    text_family: Source Serif Pro
+    text_color: '#ffffff'
+    title_color: '#ffffff'
+    title_align: left
+    title_family: Source Serif Pro
+    title_size: 19
+    title_weight: 700
+    subtitle_color: '#ffffff'
+    subtitle_align: left
+    subtitle_family: Source Serif Pro
+    subtitle_size: 15
+    subtitle_weight: 400
+    caption_color: '#ffffff'
+    caption_align: left
+    caption_family: Source Serif Pro
+    caption_size: 15
+    caption_weight: 400
+    line_color: '#e6e6e7'
+    axis_line_size: 1
+    axis_line_color: '#e6e6e7'
+    grid_color: '#4d4f50'
+    grid_size: 0.8
+    grid_line_type: Solid
+    legend_color: '#ffffff'
+    legend_family: Lato
+    tooltip_family: Lato
+palettes:
+  light:
+    main:
+      name: Main
+      type: Categorical
+      colors:
+      - '#e7322d'
+      - '#fcc240'
+      - '#3e4962'
+      - '#358a6f'
+      - '#fae0b3'
+      - '#e18a21'
+      - '#933f77'
+    sequential:
+      name: Sequential 1
+      type: Sequential
+      colors:
+      - '#fdeec7'
+      - '#ffd583'
+      - '#fabb5c'
+      - '#f4a042'
+      - '#ef8332'
+      - '#ea622c'
+      - '#e7322d'
+    sequential2:
+      name: Sequential 2
+      type: Sequential
+      colors:
+      - '#f7efcd'
+      - '#cad5b5'
+      - '#a1bb9f'
+      - '#7ca08c'
+      - '#5e847a'
+      - '#48676c'
+      - '#3e4962'
+    divergent:
+      name: Divergent 1
+      type: Deivergent
+      colors:
+      - '#de412c'
+      - '#ec8930'
+      - '#fbc070'
+      - '#f8f5f2'
+      - '#a5bfa8'
+      - '#5b877b'
+      - '#2e4c61'
+    divergent2:
+      name: Divergent 2
+      type: Deivergent
+      colors:
+      - '#a12f7e'
+      - '#ad7db1'
+      - '#cbb9dc'
+      - '#f8f5f2'
+      - '#fbcf86'
+      - '#eda93c'
+      - '#d88500'
+  dark:
+    main:
+      name: Marin
+      type: Categorical
+      colors:
+      - '#e7322d'
+      - '#fcc240'
+      - '#3e4962'
+      - '#358a6f'
+      - '#fae0b3'
+      - '#e18a21'
+      - '#933f77'
+    sequential:
+      name: Sequential 1
+      type: Sequential
+      colors:
+      - '#fdeec7'
+      - '#ffd583'
+      - '#fabb5c'
+      - '#f4a042'
+      - '#ef8332'
+      - '#ea622c'
+      - '#e7322d'
+    sequential2:
+      name: Sequential 2
+      type: Sequential
+      colors:
+      - '#f7efcd'
+      - '#cad5b5'
+      - '#a1bb9f'
+      - '#7ca08c'
+      - '#5e847a'
+      - '#48676c'
+      - '#3e4962'
+    divergent:
+      name: Divergent 1
+      type: Divergent
+      colors:
+      - '#de412c'
+      - '#ec8930'
+      - '#fbc070'
+      - '#f8f5f2'
+      - '#a5bfa8'
+      - '#5b877b'
+      - '#2e4c61'
+    divergent2:
+      name: Divergent 2
+      type: Divergent
+      colors:
+      - '#a12f7e'
+      - '#ad7db1'
+      - '#cbb9dc'
+      - '#f8f5f2'
+      - '#fbcf86'
+      - '#eda93c'
+      - '#d88500'
