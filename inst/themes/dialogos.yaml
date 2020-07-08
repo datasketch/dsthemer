@@ -5,7 +5,8 @@ themes:
     #plot_margin_top: 30
     logo: ''
     logo_position: right
-    logo_width: 100
+    logo_width: 60
+    logo_height: 40
     branding_include: true
     palette_colors: ~
     background_color: '#fafafa'
@@ -43,7 +44,8 @@ themes:
     #plot_margin_top: 30
     logo: ''
     logo_position: right
-    logo_width: 100
+    logo_width: 60
+    logo_height: 40
     branding_include: true
     palette_colors: ~
     background_color: '#242e33'
