@@ -3,6 +3,7 @@ themes:
     logo: datasketch
     logo_position: right
     palette_colors: ~
+    branding_include: false
     background_color: '#fafafa'
     na_color: '#bec7d0'
     branding_background_color: ''
@@ -28,9 +29,12 @@ themes:
     line_size: 1
     grid_color: '#bec7d0'
     grid_line_type: solid
+    legend_color: '#293845'
+    legend_family: IBM Plex Sans
   dark:
     logo: datasketch
     logo_position: right
+    branding_include: true
     palette_colors: ~
     background_color: '#2e2e2e'
     na_color: '#979797'
@@ -55,6 +59,8 @@ themes:
     caption_weight: 400
     line_color: '#979797'
     line_size: 1
+    legend_color: '#293845'
+    legend_family: IBM Plex Sans
     grid_color: '#979797'
     grid_line_type: solid
 palettes:

@@ -4,30 +4,29 @@ themes:
     #plot_margin_right: 50
     #plot_margin_top: 30
     logo: ''
-    logo_position: right
-    logo_width: 50
-    logo_height: 50
+    logo_position: left
+    logo_width: 200
     branding_include: true
     palette_colors: ~
     background_color: '#fafafa'
-    na_color: '#cbcdcf'
+    na_color: '#c2c0c4'
     branding_background_color: ''
     text_size: 13
-    text_family: Roboto Condensed
-    text_color: '#2d3b42'
-    title_color: '#2d3b42'
+    text_family: Montserrat
+    text_color: '#2d2833'
+    title_color: '#2d2833'
     title_align: left
-    title_family: Roboto Condensed
+    title_family: Montserrat
     title_size: 19
     title_weight: 700
-    subtitle_color: '#2d3b42'
+    subtitle_color: '#2d2833'
     subtitle_align: left
-    subtitle_family: Roboto Condensed
+    subtitle_family: Montserrat
     subtitle_size: 15
     subtitle_weight: 400
-    caption_color: '#2d3b42'
-    caption_align: left
-    caption_family: Roboto Condensed
+    caption_color: '#2d2833'
+    caption_align: right
+    caption_family: Montserrat
     caption_size: 15
     caption_weight: 400
     line_color: '#899195'
@@ -36,37 +35,36 @@ themes:
     grid_color: '#bcc0c2'
     grid_size: 0.8
     grid_line_type: ShortDash
-    legend_color: '#2d3b42'
-    legend_family: Roboto Condensed
+    legend_color: '#2d2833'
+    legend_family: Montserrat
   dark:
     #plot_margin_left: 50
     #plot_margin_right: 50
     #plot_margin_top: 30
     logo: ''
-    logo_position: right
-    logo_width: 50
-    logo_height: 50
+    logo_position: left
+    logo_width: 200
     branding_include: true
     palette_colors: ~
     background_color: '#20292E'
     na_color: '#cbcdcf'
     branding_background_color: ''
     text_size: 13
-    text_family: Roboto Condensed
+    text_family: Montserrat
     text_color: '#ffffff'
     title_color: '#ffffff'
     title_align: left
-    title_family: Roboto Condensed
+    title_family: Montserrat
     title_size: 19
     title_weight: 700
     subtitle_color: '#ffffff'
     subtitle_align: left
-    subtitle_family: Roboto Condensed
+    subtitle_family: Montserrat
     subtitle_size: 15
     subtitle_weight: 400
     caption_color: '#ffffff'
-    caption_align: left
-    caption_family: Roboto Condensed
+    caption_align: right
+    caption_family: Montserrat
     caption_size: 15
     caption_weight: 400
     line_color: '#899195'
@@ -74,55 +72,55 @@ themes:
     axis_line_color: '#899195'
     grid_color: '#bcc0c2'
     grid_size: 0.8
-    grid_line_type: ShortDash
+    grid_line_type: Dash
     legend_color: '#ffffff'
-    legend_family: Roboto Condensed
+    legend_family: Montserrat
 palettes:
   light:
     main:
       name: Main
       type: Categorical
       colors:
-      - '#2e64a2'
-      - '#58cdcc'
-      - '#b9e28c'
-      - '#2ba070'
-      - '#f4982e'
-      - '#c372d6'
-      - '#4a3a5f'
+      - '#691b50'
+      - '#f44e66'
+      - '#c7e8f3'
+      - '#2c6989'
+      - '#ff913d'
+      - '#8dc1a5'
+      - '#f5dca3'
     sequential:
       name: Sequential 1
       type: Sequential
       colors:
-      - '#ebfed2'
-      - '#c4e3cb'
-      - '#9ec8c5'
-      - '#77adbe'
-      - '#5192b8'
-      - '#2a76b1'
-      - '#0059aa'
+      - '#ffaf5a'
+      - '#f68c5f'
+      - '#e36e60'
+      - '#ca535f'
+      - '#ad3c5b'
+      - '#8c2956'
+      - '#691b50'
     sequential2:
       name: Sequential 2
       type: Sequential
       colors:
-      - '#e3fff4'
-      - '#c8dbdb'
-      - '#aeb9c2'
-      - '#9497aa'
-      - '#7b7693'
-      - '#63577d'
-      - '#4c3867'
+      - "#d9faff"
+      - "#bae2de"
+      - "#9ecac3"
+      - "#82b1af"
+      - "#68999f"
+      - "#4c8193"
+      - "#2c6989"
     divergent:
       name: Divergent 1
       type: Deivergent
       colors:
-      - '#34c0c0'
-      - '#79d3d3'
-      - '#b6e3e4'
-      - '#eff2f4'
-      - '#d6e8ca'
-      - '#bddd9e'
-      - '#a3d271'
+      - '#2c6989'
+      - '#6598a5'
+      - '#9bc8c7'
+      - '#f2f1f4'
+      - '#ea9b9c'
+      - '#b05673'
+      - '#691b50'
     divergent2:
       name: Divergent 2
       type: Deivergent
@@ -139,54 +137,54 @@ palettes:
       name: Marin
       type: Categorical
       colors:
-      - '#58cdcc'
-      - '#3676C0'
-      - '#b9e28c'
-      - '#2ba070'
-      - '#f4982e'
-      - '#c372d6'
-      - '#e9d8ff'
+      - '#691b50'
+      - '#f44e66'
+      - '#c7e8f3'
+      - '#2c6989'
+      - '#ff913d'
+      - '#8dc1a5'
+      - '#f5dca3'
     sequential:
       name: Sequential 1
       type: Sequential
       colors:
-      - '#8bfed6'
-      - '#74e1d3'
-      - '#5dc5d0'
-      - '#46a9cd'
-      - '#308dca'
-      - '#1870c7'
-      - '#0052c4'
+      - '#ffaf5a'
+      - '#f68c5f'
+      - '#e36e60'
+      - '#ca535f'
+      - '#ad3c5b'
+      - '#8c2956'
+      - '#691b50'
     sequential2:
       name: Sequential 2
       type: Sequential
       colors:
-      - '#f4ceff'
-      - '#ddbcfe'
-      - '#c5aafd'
-      - '#ab98fb'
-      - '#8f87fa'
-      - '#6f77f8'
-      - '#4467f6'
+      - "#d9faff"
+      - "#bae2de"
+      - "#9ecac3"
+      - "#82b1af"
+      - "#68999f"
+      - "#4c8193"
+      - "#2c6989"
     divergent:
       name: Divergent 1
       type: Divergent
       colors:
-      - '#34c0c0'
-      - '#79d3d3'
-      - '#b6e3e4'
-      - '#eff2f4'
-      - '#d6e8ca'
-      - '#bddd9e'
-      - '#a3d271'
+      - '#2c6989'
+      - '#6598a5'
+      - '#9bc8c7'
+      - '#f2f1f4'
+      - '#ea9b9c'
+      - '#b05673'
+      - '#691b50'
     divergent2:
       name: Divergent 2
       type: Divergent
       colors:
-      - '#03adc8'
-      - '#5ec7d9'
-      - '#aadee7'
-      - '#eff2f4'
-      - '#f4ddbe'
-      - '#f9c683'
-      - '#ffac42'
+      - '#8dc1a5'
+      - '#a1d3ce'
+      - '#c3e4e3'
+      - '#f2f1f4'
+      - '#fad3b9'
+      - '#feb291'
+      - '#ff913d'

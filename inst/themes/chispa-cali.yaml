@@ -12,22 +12,22 @@ themes:
     background_color: '#fafafa'
     na_color: '#bfc3c5'
     branding_background_color: ''
-    text_size: 15
-    text_family: Barlow
-    text_color: '#2e3b42'
-    title_color: '#2e3b42'
+    text_size: 14
+    text_family: Mukta
+    text_color: '#444242'
+    title_color: '#444242'
     title_align: center
-    title_family: Barlow
+    title_family: Mukta
     title_size: 21
     title_weight: 700
-    subtitle_color: '#2e3b42'
+    subtitle_color: '#444242'
     subtitle_align: center
-    subtitle_family: Barlow
+    subtitle_family: Mukta
     subtitle_size: 17
     subtitle_weight: 400
-    caption_color: '#2e3b42'
+    caption_color: '#444242'
     caption_align: left
-    caption_family: Barlow
+    caption_family: Mukta
     caption_size: 17
     caption_weight: 400
     line_color: '#80878c'
@@ -36,8 +36,9 @@ themes:
     grid_color: '#dddfe0'
     grid_size: 0.8
     grid_line_type: solid
-    legend_color: '#2e3b42'
-    legend_family: Barlow
+    legend_color: '#444242'
+    legend_family: Mukta
+    legend_size: 13
   dark:
     #plot_margin_left: 50
     #plot_margin_right: 50
@@ -48,25 +49,25 @@ themes:
     logo_height: 40
     branding_include: true
     palette_colors: ~
-    background_color: '#242e33'
+    background_color: '#444242'
     na_color: '#bfc3c5'
     branding_background_color: ''
-    text_size: 15
-    text_family: Barlow
+    text_size: 14
+    text_family: Mukta
     text_color: '#ffffff'
     title_color: '#ffffff'
     title_align: center
-    title_family: Barlow
+    title_family: Mukta
     title_size: 21
     title_weight: 700
     subtitle_color: '#ffffff'
     subtitle_align: center
-    subtitle_family: Barlow
+    subtitle_family: Mukta
     subtitle_size: 17
     subtitle_weight: 400
     caption_color: '#ffffff'
     caption_align: left
-    caption_family: Barlow
+    caption_family: Mukta
     caption_size: 17
     caption_weight: 400
     line_color: '#80878c'
@@ -76,29 +77,30 @@ themes:
     grid_size: 0.8
     grid_line_type: solid
     legend_color: '#ffffff'
-    legend_family: Barlow
+    legend_family: Mukta
+    legend_size: 13
 palettes:
   light:
     main:
       name: Main
       type: Categorical
       colors:
-      - '#0c95ba'
-      - '#3c5668'
-      - '#00cbb5'
-      - '#a9f1d9'
-      - '#5a54d3'
-      - '#df6cef'
-      - '#e9c3f8'
+      - '#fd954f'
+      - '#00b7d8'
+      - '#7BCB97'
+      - '#AF8AC3'
+      - '#1F6074'
+      - '#E64D4D'
+      - '#D8D870'
   dark:
     main:
       name: Marin
       type: Categorical
       colors:
-      - '#0c95ba'
-      - '#517589'
-      - '#02dbc4'
-      - '#adfbe2'
-      - '#5a54d3'
-      - '#df6cef'
-      - '#f0ccff'
+      - '#fd954f'
+      - '#00b7d8'
+      - '#7BCB97'
+      - '#AF8AC3'
+      - '#1F6074'
+      - '#E64D4D'
+      - '#D8D870'

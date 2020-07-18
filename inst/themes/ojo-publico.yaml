@@ -1,0 +1,216 @@
+themes:
+  light:
+    #plot_margin_left: 50
+    #plot_margin_right: 50
+    #plot_margin_top: 30
+    logo: ''
+    logo_position: right
+    logo_width: 170
+    branding_include: true
+    palette_colors: ~
+    background_color: '#fafafa'
+    na_color: '#cccccc'
+    branding_background_color: ''
+    text_size: 14
+    text_family: Nunito Sans
+    text_color: '#333333'
+    title_color: '#333333'
+    title_align: left
+    title_family: Nunito Sans
+    title_size: 19
+    title_weight: 700
+    subtitle_color: '#333333'
+    subtitle_align: left
+    subtitle_family: Nunito Sans
+    subtitle_size: 15
+    subtitle_weight: 400
+    caption_color: '#333333'
+    caption_align: left
+    caption_family: Nunito Sans
+    caption_size: 15
+    caption_weight: 400
+    line_color: '#a0a0a0'
+    axis_line_size: 1
+    axis_line_color: '#a0a0a0'
+    grid_color: '#bcbcbc'
+    grid_size: 0.8
+    grid_line_type: Dot
+    legend_color: '#333333'
+    legend_family: Nunito Sans
+  dark:
+    #plot_margin_left: 50
+    #plot_margin_right: 50
+    #plot_margin_top: 30
+    logo: ''
+    logo_position: right
+    branding_include: true
+    palette_colors: ~
+    background_color: '#20292E'
+    na_color: '#cccccc'
+    branding_background_color: ''
+    text_size: 14
+    text_family: Nunito Sans
+    text_color: '#ffffff'
+    title_color: '#ffffff'
+    title_align: left
+    title_family: Nunito Sans
+    title_size: 19
+    title_weight: 700
+    subtitle_color: '#ffffff'
+    subtitle_align: left
+    subtitle_family: Nunito Sans
+    subtitle_size: 15
+    subtitle_weight: 400
+    caption_color: '#ffffff'
+    caption_align: left
+    caption_family: Nunito Sans
+    caption_size: 15
+    caption_weight: 400
+    line_color: '#a0a0a0'
+    axis_line_size: 1
+    axis_line_color: '#a0a0a0'
+    grid_color: '#bcbcbc'
+    grid_size: 0.8
+    grid_line_type: Dot
+    legend_color: '#FFFFFF'
+    legend_family: Nunito Sans
+palettes:
+  light:
+    main:
+      name: Main
+      type: Categorical
+      colors:
+      - '#fdbc18'
+      - '#f44d25'
+      - '#3db26f'
+      - '#b6e589'
+      - '#016fb9'
+      - '#6ed4e5'
+      - '#e04894'
+      - '#ff9827'
+      - '#845eef'
+      - '#db89ef'
+    sequential:
+      name: Sequential 1
+      type: Sequential
+      colors:
+      - '#fdbc18'
+      - '#f44d25'
+      - '#3db26f'
+      - '#b6e589'
+      - '#016fb9'
+      - '#6ed4e5'
+      - '#e04894'
+      - '#ff9827'
+      - '#845eef'
+      - '#db89ef'
+    sequential2:
+      name: Sequential 2
+      type: Sequential
+      colors:
+      - '#cffff3'
+      - '#b1f3d9'
+      - '#a1e4ce'
+      - '#8dd5ca'
+      - '#73c6c8'
+      - '#51b8c9'
+      - '#00aacb'
+    divergent:
+      name: Divergent 1
+      type: Divergent
+      colors:
+      - '#fdbc18'
+      - '#f44d25'
+      - '#3db26f'
+      - '#b6e589'
+      - '#016fb9'
+      - '#6ed4e5'
+      - '#e04894'
+      - '#ff9827'
+      - '#845eef'
+      - '#db89ef'
+    divergent2:
+      name: Divergent 2
+      type: Divergent
+      colors:
+      - '#fdbc18'
+      - '#f44d25'
+      - '#3db26f'
+      - '#b6e589'
+      - '#016fb9'
+      - '#6ed4e5'
+      - '#e04894'
+      - '#ff9827'
+      - '#845eef'
+      - '#db89ef'
+  dark:
+    main:
+      name: Marin
+      type: Categorical
+      colors:
+      - '#fdbc18'
+      - '#f44d25'
+      - '#3db26f'
+      - '#b6e589'
+      - '#016fb9'
+      - '#6ed4e5'
+      - '#e04894'
+      - '#ff9827'
+      - '#845eef'
+      - '#db89ef'
+    sequential:
+      name: Sequential 1
+      type: Sequential
+      colors:
+      - '#fdbc18'
+      - '#f44d25'
+      - '#3db26f'
+      - '#b6e589'
+      - '#016fb9'
+      - '#6ed4e5'
+      - '#e04894'
+      - '#ff9827'
+      - '#845eef'
+      - '#db89ef'
+    sequential2:
+      name: Sequential 2
+      type: Sequential
+      colors:
+      - '#fdbc18'
+      - '#f44d25'
+      - '#3db26f'
+      - '#b6e589'
+      - '#016fb9'
+      - '#6ed4e5'
+      - '#e04894'
+      - '#ff9827'
+      - '#845eef'
+      - '#db89ef'
+    divergent:
+      name: Divergent 1
+      type: Deivergent
+      colors:
+      - '#fdbc18'
+      - '#f44d25'
+      - '#3db26f'
+      - '#b6e589'
+      - '#016fb9'
+      - '#6ed4e5'
+      - '#e04894'
+      - '#ff9827'
+      - '#845eef'
+      - '#db89ef'
+    divergent2:
+      name: Divergent 2
+      type: Deivergent
+      colors:
+      - '#fdbc18'
+      - '#f44d25'
+      - '#3db26f'
+      - '#b6e589'
+      - '#016fb9'
+      - '#6ed4e5'
+      - '#e04894'
+      - '#ff9827'
+      - '#845eef'
+      - '#db89ef'
