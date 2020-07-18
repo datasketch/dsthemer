@@ -9,10 +9,19 @@ library(ggmagic)
 
 ui <- panelsPage(
   panel(
-    title = "Upload Data",
+    title = "Customize Theme",
     width = 300,
     body = div(
+      uiOutput("available_themes"),
       uiOutput("controls")
+    )
+  ),
+  panel(
+    title = "Theme YAML",
+    width = 300,
+    body = div(
+      textAreaInput("theme_yaml", "", value = "# Select a themre",
+                    height = "800px")
     )
   ),
   panel(
@@ -36,9 +45,13 @@ server <-  function(input, output, session) {
                   container_section = div_dark,
                   input = input, output = output)
 
+  output$available_themes <- renderUI({
+    themes <- dsthemer::theme_list()
+  })
+
   output$debug <- renderPrint({
-    str(parmesan_input())
-    str(data())
+    #str(parmesan_input())
+    #str(data())
   })
 
   data <- reactive({

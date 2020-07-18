@@ -1,5 +1,8 @@
 test_that("Get theme", {
 
+  theme_list()
+
+
   org_theme_list()
 
 

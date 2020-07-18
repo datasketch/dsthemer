@@ -20,7 +20,11 @@ theme_get <- function(org, theme = NULL, palette = NULL){
 }
 
 #' @export
-theme_list <- function(org){
+theme_list <- function(org = NULL){
+  if(is.null(org)){
+    themes <- list.files(system.file("themes", package = "dsthemer"))
+    return(file_path_sans_ext(themes))
+  }
   l <- load_theme_yaml(org)
   names(l$themes)
 }
