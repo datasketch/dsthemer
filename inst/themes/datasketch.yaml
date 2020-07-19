@@ -3,7 +3,7 @@ themes:
     logo: datasketch
     logo_position: right
     palette_colors: ~
-    branding_include: false
+    branding_include: true
     background_color: '#fafafa'
     na_color: '#bec7d0'
     branding_background_color: ''
