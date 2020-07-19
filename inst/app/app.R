@@ -6,6 +6,7 @@ library(tidyverse)
 library(homodatum)
 library(dsvizopts)
 library(ggmagic)
+library(dsthemer)
 
 themes <- dsthemer::dsthemer_list()
 
@@ -35,7 +36,8 @@ ui <- panelsPage(
     title = "Viz",
     body = plotOutput("viz"),
     footer = uiOutput("viz_icons")
-  )
+  ),
+  showDebug(hosts = c("127.0.0.2"))
 )
 
 div_dark <- function(...){
