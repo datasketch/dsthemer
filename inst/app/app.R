@@ -15,6 +15,7 @@ ui <- panelsPage(
     title = "Load Theme",
     width = 300,
     body = div(
+      verbatimTextOutput("debug"),
       selectInput("select_org", label = "Org",
                   choices = themes),
       uiOutput("available_themes"),
@@ -34,17 +35,20 @@ ui <- panelsPage(
   ),
   panel(
     title = "Viz",
-    body = plotOutput("viz"),
+    body = div(
+      plotOutput("viz")
+      ),
     footer = uiOutput("viz_icons")
   ),
-  showDebug(hosts = c("127.0.0.2"))
+  showDebug(hosts = c("127.0.0.1", "randommonkey.shinyapps.io"))
 )
 
 div_dark <- function(...){
   div(style="background-color:#f4f4f7;border: 1px solid #CCC;border-radius:5px;padding:10px;margin-bottom:10px;", ...)
 }
 
-
+#parmesan <- parmesan_load(path = "parmesan")
+#ins <- parmesan_input_ids(parmesan = parmesan)
 
 server <-  function(input, output, session) {
 
@@ -85,7 +89,7 @@ server <-  function(input, output, session) {
 
   output$debug <- renderPrint({
     #str(parmesan_input())
-    #str(data())
+    str(data())
   })
 
   data <- reactive({
@@ -99,6 +103,26 @@ server <-  function(input, output, session) {
     data
   })
 
+  output$viz <- renderPlot({
+    if(is.null(input$viz_selection)) return()
+    selected_viz <- input$viz_selection
+    viz <- paste0("gg_", selected_viz, "_CatNum")
+    data <- data()
+    opts <- parmesan_input()
+    if(is.null(opts)) return()
+    # if(any(unlist(lapply(opts, is.null))) return()
+    if(is.null(data)) return()
+    opts$color_by <- names(data)[1]
+    do.call(viz, list(data, opts))
+  })
+
+  output$viz_icons <- renderUI({
+    buttonImageInput('viz_selection',
+                     HTML('<div class = "style_section">Choose a visualization type</div>'),
+                     images = c("bar",  "pie", "donut", "treemap", "bubbles", "line"),
+                     path = 'img/svg/',
+                     format = 'svg')
+  })
 
   add_color_codes_box <- function(id){
     codes_box_id <- paste0(id,"_codes")
@@ -128,23 +152,6 @@ server <-  function(input, output, session) {
     add_color_codes_box("plot_background_color")
     add_color_codes_box("plot_border_color")
     add_color_codes_box("legend_color")
-  })
-
-  output$viz <- renderPlot({
-    selected_viz <- input$viz_selection
-    viz <- paste0("gg_", selected_viz, "_CatNum")
-    data <- data()
-    opts <- parmesan_input()
-    opts$color_by <- names(data)[1]
-    do.call(viz, list(data, opts))
-  })
-
-  output$viz_icons <- renderUI({
-    buttonImageInput('viz_selection',
-                     HTML('<div class = "style_section">Choose a visualization type</div>'),
-                     images = c("bar",  "pie", "donut", "treemap", "bubbles", "line"),
-                     path = 'img/svg/',
-                     format = 'svg')
   })
 
   #parmesan_alert(parmesan, env = environment())
