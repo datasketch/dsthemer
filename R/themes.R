@@ -1,37 +1,37 @@
 
 #' @export
-theme_get <- function(org, theme = NULL, palette = NULL){
-  if(!org %in% org_theme_list())
+dsthemer_get <- function(org, theme = NULL, palette = NULL){
+  if(!org %in% org_dsthemer_list())
     stop("org doesn't have a defined theme")
-  l <- load_theme_yaml(org)
-  first_theme_name <- names(l$themes)[1]
-  theme <- theme %||% first_theme_name
+  l <- load_dsthemer_yaml(org)
+  first_dsthemer_name <- names(l$themes)[1]
+  theme <- theme %||% first_dsthemer_name
   available_themes <- names(l$themes)
   if(!theme %in% available_themes)
     stop("Theme does not exist for this org. Try one of: ",
          paste(available_themes, collapse = ", "))
-  thm <- modifyList(l$themes[[first_theme_name]], l$themes[[theme]], keep.null = TRUE)
+  thm <- modifyList(l$themes[[first_dsthemer_name]], l$themes[[theme]], keep.null = TRUE)
   first_palette_name <- names(l$palettes[[1]])[1]
   palette <- palette %||% first_palette_name
   thm$palette_colors <- l$palettes[[theme]][[palette]]$colors
   if(!is.null(theme))
-    thm$logo <- theme_logo(org, theme)
+    thm$logo <- dsthemer_logo(org, theme)
   thm
 }
 
 #' @export
-theme_list <- function(org = NULL){
+dsthemer_list <- function(org = NULL){
   if(is.null(org)){
     themes <- list.files(system.file("themes", package = "dsthemer"))
     return(file_path_sans_ext(themes))
   }
-  l <- load_theme_yaml(org)
+  l <- load_dsthemer_yaml(org)
   names(l$themes)
 }
 
 #' @export
-theme_palettes <- function(org, theme, type = NULL){
-  l <- load_theme_yaml(org)
+dsthemer_palettes <- function(org, theme, type = NULL){
+  l <- load_dsthemer_yaml(org)
   x <- names(l$palettes[[theme]])
   names(x) <- unlist(lapply(l$palettes[[theme]], function(x) x$name))
   if(is.null(type)){
@@ -47,22 +47,22 @@ theme_palettes <- function(org, theme, type = NULL){
 }
 
 #' @export
-theme_palette <- function(org, theme, palette){
-  l <- load_theme_yaml(org)
+dsthemer_palette <- function(org, theme, palette){
+  l <- load_dsthemer_yaml(org)
   l$palettes[[theme]][[palette]]$colors
 }
 
 #' @export
-org_theme_list <- function(){
+org_dsthemer_list <- function(){
   file_path_sans_ext(list.files(system.file("themes", package = "dsthemer")))
 }
 
 
-theme_logo <- function(org, theme){
+dsthemer_logo <- function(org, theme){
   system.file(file.path("logos",org, paste0(theme, ".png")), package = "dsthemer")
 }
 
-load_theme_yaml <- function(org){
+load_dsthemer_yaml <- function(org){
   themes_path <- system.file("themes", package = "dsthemer")
   all_orgs <- file_path_sans_ext(list.files(themes_path))
   if(!org %in% all_orgs)

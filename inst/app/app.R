@@ -7,21 +7,28 @@ library(homodatum)
 library(dsvizopts)
 library(ggmagic)
 
+themes <- dsthemer::dsthemer_list()
+
 ui <- panelsPage(
+  panel(
+    title = "Load Theme",
+    width = 300,
+    body = div(
+      selectInput("select_org", label = "Org",
+                  choices = themes),
+      uiOutput("available_themes"),
+      verbatimTextOutput("dsthemer_text")
+    )
+  ),
   panel(
     title = "Customize Theme",
     width = 300,
     body = div(
-      uiOutput("available_themes"),
+      toggleSwitchInput("show_yaml", "Show Yaml"),
+      conditionalPanel("input.show_yaml",
+                       verbatimTextOutput("custom_dsthemer_yaml")
+      ),
       uiOutput("controls")
-    )
-  ),
-  panel(
-    title = "Theme YAML",
-    width = 300,
-    body = div(
-      textAreaInput("theme_yaml", "", value = "# Select a themre",
-                    height = "800px")
     )
   ),
   panel(
@@ -32,13 +39,22 @@ ui <- panelsPage(
 )
 
 div_dark <- function(...){
-  div(style="background-color:#f4f4f7;border: 1px solid #CCC;border-radius:10px;padding:10px;margin-bottom:10px;", ...)
+  div(style="background-color:#f4f4f7;border: 1px solid #CCC;border-radius:5px;padding:10px;margin-bottom:10px;", ...)
 }
+
 
 
 server <-  function(input, output, session) {
 
-  parmesan <- parmesan_load()
+  parmesan <- reactive({
+    #req(input$select_org, input$select_theme)
+    if(is.null(input$select_org)) return()
+    if(is.null(input$select_theme)) return()
+    th <- dsthemer::dsthemer_get(input$select_org, input$select_theme)
+    presets <- dsthemer_presets(th)
+    parmesan_load(presets = presets)
+  })
+
   parmesan_input <- parmesan_watch(input, parmesan)
 
   output_parmesan("controls", parmesan = parmesan,
@@ -46,7 +62,23 @@ server <-  function(input, output, session) {
                   input = input, output = output)
 
   output$available_themes <- renderUI({
-    themes <- dsthemer::theme_list()
+    list(
+      selectInput("select_theme", label = "Theme",
+                  choices = dsthemer_list(input$select_org))
+    )
+  })
+  output$dsthemer_text <- renderPrint({
+    th <- dsthemer_get(input$select_org, input$select_theme)
+    txt <- yaml::as.yaml(th)
+    cat(txt)
+  })
+
+  output$custom_dsthemer_yaml <- renderPrint({
+    th <- dsthemer_get(input$select_org, input$select_theme)
+    th <- modifyList(th, parmesan_input())
+    #str(parmesan_input())
+    txt <- yaml::as.yaml(th)
+    cat(txt)
   })
 
   output$debug <- renderPrint({
@@ -113,7 +145,7 @@ server <-  function(input, output, session) {
                      format = 'svg')
   })
 
-  parmesan_alert(parmesan, env = environment())
+  #parmesan_alert(parmesan, env = environment())
 }
 
 
