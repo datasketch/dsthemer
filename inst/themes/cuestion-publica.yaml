@@ -4,7 +4,7 @@ themes:
     #plot_margin_right: 50
     #plot_margin_top: 30
     logo: ''
-    logo_position: left
+    logo_position: right
     logo_width: 200
     branding_include: true
     palette_colors: ~

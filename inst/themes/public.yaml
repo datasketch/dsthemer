@@ -2,6 +2,8 @@ themes:
   light:
     logo: datasketch
     logo_position: right
+    logo_width: 180
+    logo_height: 35
     palette_colors: ~
     branding_include: true
     background_color: '#fafafa'
