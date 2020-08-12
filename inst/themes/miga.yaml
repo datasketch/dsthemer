@@ -43,7 +43,7 @@ themes:
     #plot_margin_top: 30
     logo: ''
     logo_position: right
-    logo_width: 70
+    #logo_width: 70
     branding_include: true
     palette_colors: ~
     background_color: '#232323'

@@ -5,8 +5,8 @@ themes:
     #plot_margin_top: 30
     logo: ''
     logo_position: right
-    logo_width: 50
-    logo_height: 50
+    #logo_width: 50
+    #logo_height: 50
     branding_include: true
     palette_colors: ~
     background_color: '#fafafa'
