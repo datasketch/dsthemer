@@ -69,13 +69,13 @@ palettes:
       name: Main
       type: Categorical
       colors:
-      - '#315491'
-      - '#f8891d'
-      - '#de347c'
-      - '#45a7d5'
-      - '#ffd255'
-      - '#82ce92'
-      - '#3a6e6b'
+      - '#003df6'
+      - '#17b6f2'
+      - '#ffac44'
+      - '#fc6200'
+      - '#f5dfb6'
+      - '#a97cf6'
+      - '#efacf7'
     sequential:
       name: Sequential 1
       type: Sequential
@@ -126,12 +126,12 @@ palettes:
       type: Categorical
       colors:
       - '#1d5eff'
-      - '#f8891d'
-      - '#de347c'
-      - '#45a7d5'
-      - '#ffd255'
-      - '#82ce92'
-      - '#3a6e6b'
+      - '#17b6f2'
+      - '#ffac44'
+      - '#fc6200'
+      - '#f5dfb6'
+      - '#a97cf6'
+      - '#efacf7'
     sequential:
       name: Sequential 1
       type: Sequential
