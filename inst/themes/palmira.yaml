@@ -1,0 +1,179 @@
+themes:
+  light:
+    logo: palmira
+    logo_position: right
+    palette_colors: ~
+    branding_include: true
+    background_color: '#ffffff'
+    na_color: '#ccccca'
+    branding_background_color: ''
+    text_size: 13
+    text_family: Trebuchet MS
+    text_color: '#03110a'
+    title_color: '#03110a'
+    title_align: center
+    title_family: Helvetica
+    title_size: 18
+    title_weight: 700
+    subtitle_color: '#03110a'
+    subtitle_align: center
+    subtitle_family: Helvetica
+    subtitle_size: 15
+    subtitle_weight: 400
+    caption_color: '#03110a'
+    caption_align: left
+    caption_family: Helvetica
+    caption_size: 13
+    caption_weight: 400
+    line_color: '#868786'
+    line_size: 1
+    grid_color: '#c3c6c1'
+    grid_line_type: ShortDot
+    legend_color: '#03110a'
+    legend_family: Trebuchet MS
+  dark:
+    logo: palmira
+    logo_position: right
+    branding_include: true
+    palette_colors: ~
+    background_color: '#222526'
+    na_color: '#c3c6c1'
+    branding_background_color: ''
+    text_size: 13
+    text_family: Trebuchet MS
+    text_color: '#ffffff'
+    title_color: '#ffffff'
+    title_align: center
+    title_family: Helvetica
+    title_size: 18
+    title_weight: 700
+    subtitle_color: '#ffffff'
+    subtitle_align: left
+    subtitle_family: Helvetica
+    subtitle_size: 15
+    subtitle_weight: 400
+    caption_color: '#ffffff'
+    caption_align: left
+    caption_family: Helvetica
+    caption_size: 13
+    caption_weight: 400
+    line_color: '#ccccca'
+    line_size: 1
+    grid_color: '#686868'
+    grid_line_type: ShortDot
+    legend_color: '#ffffff'
+    legend_family: Trebuchet MS
+palettes:
+  light:
+    main:
+      name: Main
+      type: Categorical
+      colors:
+      - '#1ba470'
+      - '#f8b047'
+      - '#e65a65'
+      - '#347899'
+      - '#a84ea8'
+      - '#e58100'
+      - '#97b949'
+    sequential:
+      name: Sequential 1
+      type: Sequential
+      colors:
+      - '#F8CF81'
+      - '#DBC975'
+      - '#BFC36E'
+      - '#A3BB6B'
+      - '#87B36B'
+      - '#6AAA6F'
+      - '#4DA174'
+    sequential2:
+      name: Sequential 2
+      type: Sequential
+      colors:
+      - '#BFB5EC'
+      - '#C6A7E0'
+      - '#CE98D0'
+      - '#D58ABB'
+      - '#D97AA2'
+      - '#DA6D86'
+      - '#E65A65'
+    divergent:
+      name: Divergent 1
+      type: Divergent
+      colors:
+      - '#F8B047'
+      - '#FBC581'
+      - '#F8DAB8'
+      - '#EFEFEF'
+      - '#B4C6D2'
+      - '#789EB5'
+      - '#347899'
+    divergent2:
+      name: Divergent 2
+      type: Divergent
+      colors:
+      - '#A84EA8'
+      - '#C285C0'
+      - '#DABAD7'
+      - '#EFEFEF'
+      - '#D4DDB8'
+      - '#B7CB81'
+      - '#97B949'
+  dark:
+    main:
+      name: Main
+      type: Categorical
+      colors:
+      - '#1ba470'
+      - '#f8b047'
+      - '#e65a65'
+      - '#347899'
+      - '#a84ea8'
+      - '#e58100'
+      - '#97b949'
+    sequential:
+      name: Sequential 1
+      type: Sequential
+      colors:
+      - '#F8CF81'
+      - '#DBC975'
+      - '#BFC36E'
+      - '#A3BB6B'
+      - '#87B36B'
+      - '#6AAA6F'
+      - '#4DA174'
+    sequential2:
+      name: Sequential 2
+      type: Sequential
+      colors:
+      - '#BFB5EC'
+      - '#C6A7E0'
+      - '#CE98D0'
+      - '#D58ABB'
+      - '#D97AA2'
+      - '#DA6D86'
+      - '#E65A65'
+    divergent:
+      name: Divergent 1
+      type: Divergent
+      colors:
+      - '#F8B047'
+      - '#FBC581'
+      - '#F8DAB8'
+      - '#EFEFEF'
+      - '#B4C6D2'
+      - '#789EB5'
+      - '#347899'
+    divergent2:
+      name: Divergent 2
+      type: Divergent
+      colors:
+      - '#A84EA8'
+      - '#C285C0'
+      - '#DABAD7'
+      - '#EFEFEF'
+      - '#D4DDB8'
+      - '#B7CB81'
+      - '#97B949'
+
