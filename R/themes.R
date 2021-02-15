@@ -1,4 +1,4 @@
-
+#' Get Themer
 #' @export
 dsthemer_get <- function(org, theme = NULL, palette = NULL){
   if(!org %in% org_dsthemer_list())
