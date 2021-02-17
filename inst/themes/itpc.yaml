@@ -27,7 +27,7 @@ themes:
     caption_color: '#222526'
     caption_align: left
     caption_family: Source Serif Pro
-    caption_size: 15
+    caption_size: 11
     caption_weight: 400
     line_color: '#8e8f90'
     axis_line_size: 1

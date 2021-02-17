@@ -28,7 +28,7 @@ themes:
     caption_color: '#333333'
     caption_align: left
     caption_family: Nunito Sans
-    caption_size: 15
+    caption_size: 11
     caption_weight: 400
     line_color: '#a0a0a0'
     axis_line_size: 1

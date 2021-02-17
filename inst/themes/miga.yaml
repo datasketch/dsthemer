@@ -27,7 +27,7 @@ themes:
     caption_color: '#232323'
     caption_align: left
     caption_family: PT Sans Narrow
-    caption_size: 15
+    caption_size: 11
     caption_weight: 400
     line_color: '#a4a4a4'
     axis_line_size: 1

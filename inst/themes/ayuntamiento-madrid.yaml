@@ -23,7 +23,7 @@ themes:
     caption_color: '#20293f'
     caption_align: left
     caption_family: Gill Sans Bold
-    caption_size: 13
+    caption_size: 11
     caption_weight: 400
     line_color: '#20293f'
     line_size: 1

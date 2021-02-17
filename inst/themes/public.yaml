@@ -25,7 +25,7 @@ themes:
     caption_color: '#28333f'
     caption_align: left
     caption_family: IBM Plex Sans
-    caption_size: 17
+    caption_size: 11
     caption_weight: 400
     line_color: '#7e858c'
     line_size: 1

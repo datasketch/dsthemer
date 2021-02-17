@@ -28,7 +28,7 @@ themes:
     caption_color: '#2b303a'
     caption_align: left
     caption_family: Lato
-    caption_size: 15
+    caption_size: 11
     caption_weight: 400
     line_color: '#899195'
     axis_line_size: 1

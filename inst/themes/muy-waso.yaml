@@ -28,7 +28,7 @@ themes:
     caption_color: '#232323'
     caption_align: left
     caption_family: Oswald
-    caption_size: 15
+    caption_size: 11
     caption_weight: 400
     line_color: '#a6a6a6'
     axis_line_size: 1

@@ -28,7 +28,7 @@ themes:
     caption_color: '#2e3b42'
     caption_align: left
     caption_family: Barlow
-    caption_size: 17
+    caption_size: 11
     caption_weight: 400
     line_color: '#80878c'
     axis_line_size: 1

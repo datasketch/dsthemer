@@ -28,7 +28,7 @@ themes:
     caption_color: '#2d3b42'
     caption_align: left
     caption_family: Roboto Condensed
-    caption_size: 15
+    caption_size: 11
     caption_weight: 400
     line_color: '#899195'
     axis_line_size: 1
