@@ -20,3 +20,5 @@ Suggests:
 Imports: 
     dsvizopts,
     yaml
+Remotes:
+    datasketch/dsvizopts
