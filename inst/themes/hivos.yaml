@@ -1,0 +1,80 @@
+themes:
+  light:
+    logo: hivos
+    logo_position: right
+    #logo_width: 180
+    #logo_height: 35
+    palette_colors: ~
+    branding_include: true
+    background_color: '#ffffff'
+    na_color: '#b8b4b3'
+    branding_background_color: ''
+    text_size: 13
+    text_family: Museo Sans Rounded
+    text_color: '#111111'
+    title_color: '#111111'
+    title_align: left
+    title_family: Times New Roman Italic
+    title_size: 19
+    title_weight: 700
+    subtitle_color: '#111111'
+    subtitle_align: left
+    subtitle_family: Times New Roman Italic
+    subtitle_size: 17
+    subtitle_weight: 400
+    caption_color: '#111111'
+    caption_align: left
+    caption_family: Museo Sans Rounded
+    caption_size: 11
+    caption_weight: 400
+    line_color: '#dbd9d9'
+    line_size: 1
+    grid_color: '#dbd9d9'
+    grid_line_type: Dot
+    legend_color: '#111111'
+    legend_family: Museo Sans Rounded
+  dark:
+    logo: hivos
+    logo_position: right
+    branding_include: true
+    palette_colors: ~
+    background_color: '#262531'
+    na_color: '#b8b4b3'
+    branding_background_color: ''
+    text_size: 13
+    text_family: Museo Sans Rounded
+    text_color: '#ffffff'
+    title_color: '#ffffff'
+    title_align: left
+    title_family: Times New Roman Italic
+    title_size: 21
+    title_weight: 700
+    subtitle_color: '#ffffff'
+    subtitle_align: left
+    subtitle_family: Times New Roman Italic
+    subtitle_size: 21
+    subtitle_weight: 400
+    caption_color: '#ffffff'
+    caption_align: left
+    caption_family: Museo Sans Rounded
+    caption_size: 17
+    caption_weight: 400
+    line_color: '#d0cfd2'
+    line_size: 1
+    legend_color: '#ffffff'
+    legend_family: Museo Sans Rounded
+    grid_color: '#dbd9d9'
+    grid_line_type: Dot
+palettes:
+  light:
+    main:
+      name: Main
+      type: Categorical
+      colors:
+      - '#d51317'
+      - '#ffac44'
+      - '#591ff8'
+      - '#1b1e42'
+      - '#018e42'
+      - '#e07be0'
+      - '#f0e2b0'
