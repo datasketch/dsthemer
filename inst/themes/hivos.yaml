@@ -78,3 +78,15 @@ palettes:
       - '#018e42'
       - '#e07be0'
       - '#f0e2b0'
+  dark:
+    main:
+      name: Main
+      type: Categorical
+      colors:
+      - '#d51317'
+      - '#ffac44'
+      - '#591ff8'
+      - '#1b1e42'
+      - '#018e42'
+      - '#e07be0'
+      - '#f0e2b0'
