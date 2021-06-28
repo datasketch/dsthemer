@@ -1,12 +1,7 @@
 themes:
   light:
-    #plot_margin_left: 50
-    #plot_margin_right: 50
-    #plot_margin_top: 30
     logo: ''
     logo_position: right
-    #logo_width: 200
-    #logo_height: 40
     branding_include: true
     palette_colors: ~
     background_color: '#fafafa'
@@ -38,10 +33,28 @@ themes:
     grid_line_type: ShortDash
     legend_color: '#2b303a'
     legend_family: Lato
+    table_title_color: "#2b303a"
+    table_title_family: Fjalla One
+    table_title_size: 30
+    table_title_weight: 700
+    table_subtitle_color: "#2b303a"
+    table_subtitle_family: Lato
+    table_subtitle_size: 18
+    table_subtitle_weight: 400
+    header_text_color: "#ffffff"
+    header_text_family: Fjalla One
+    header_text_size: 22
+    header_text_weight: 700
+    cell_text_color: "#2b303a"
+    cell_text_family: Lato
+    cell_text_size: 18
+    cell_text_weight: 400
+    link_color: "#078083"
+    header_background: "#d34028"
+    zebra_stripe1: "#ffffff"
+    zebra_stripe2: "#f6fcfa"
+    desactivated_controls: "#bbbdc0"
   dark:
-    #plot_margin_left: 50
-    #plot_margin_right: 50
-    #plot_margin_top: 30
     logo: ''
     logo_position: right
     logo_width: 200
@@ -76,6 +89,27 @@ themes:
     grid_line_type: ShortDash
     legend_color: '#ffffff'
     legend_family: Lato
+    table_title_color: "#2b303a"
+    table_title_family: Fjalla One
+    table_title_size: 30
+    table_title_weight: 700
+    table_subtitle_color: "#2b303a"
+    table_subtitle_family: Lato
+    table_subtitle_size: 18
+    table_subtitle_weight: 400
+    header_text_color: "#ffffff"
+    header_text_family: Fjalla One
+    header_text_size: 22
+    header_text_weight: 700
+    cell_text_color: "#2b303a"
+    cell_text_family: Lato
+    cell_text_size: 18
+    cell_text_weight: 400
+    link_color: "#078083"
+    header_background: "#d34028"
+    zebra_stripe1: "#ffffff"
+    zebra_stripe2: "#f6fcfa"
+    desactivated_controls: "#bbbdc0"
 palettes:
   light:
     main:
