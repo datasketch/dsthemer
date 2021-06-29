@@ -36,11 +36,15 @@ themes:
     table_title_color: "#2b303a"
     table_title_family: Fjalla One
     table_title_size: 30
-    table_title_weight: 700
+    table_title_weight: normal
     table_subtitle_color: "#2b303a"
     table_subtitle_family: Lato
     table_subtitle_size: 18
-    table_subtitle_weight: 400
+    table_subtitle_weight: normal
+    table_caption_color: "#2b303a"
+    table_caption_family: Lato
+    table_caption_size: 11
+    table_caption_weight: normal
     header_text_color: "#ffffff"
     header_text_family: Fjalla One
     header_text_size: 22
@@ -92,11 +96,15 @@ themes:
     table_title_color: "#2b303a"
     table_title_family: Fjalla One
     table_title_size: 30
-    table_title_weight: 700
+    table_title_weight: normal
     table_subtitle_color: "#2b303a"
     table_subtitle_family: Lato
     table_subtitle_size: 18
-    table_subtitle_weight: 400
+    table_subtitle_weight: normal
+    table_caption_color: "#2b303a"
+    table_caption_family: Lato
+    table_caption_size: 11
+    table_caption_weight: normal
     header_text_color: "#ffffff"
     header_text_family: Fjalla One
     header_text_size: 22
