@@ -55,8 +55,7 @@ themes:
     cell_text_weight: 400
     link_color: "#078083"
     header_background: "#d34028"
-    zebra_stripe1: "#ffffff"
-    zebra_stripe2: "#f6fcfa"
+    zebra_stripe_color: "#f6fcfa"
     desactivated_controls: "#bbbdc0"
   dark:
     logo: ''
@@ -115,8 +114,7 @@ themes:
     cell_text_weight: 400
     link_color: "#078083"
     header_background: "#d34028"
-    zebra_stripe1: "#ffffff"
-    zebra_stripe2: "#f6fcfa"
+    zebra_stripe_color: "#f6fcfa"
     desactivated_controls: "#bbbdc0"
 palettes:
   light:
