@@ -109,7 +109,7 @@ themes:
     header_text_family: Fjalla One
     header_text_size: 22
     header_text_weight: 700
-    cell_text_color: "#2b303a"
+    cell_text_color: "#ffffff"
     cell_text_family: Lato
     cell_text_size: 18
     cell_text_weight: 400
