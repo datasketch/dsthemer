@@ -36,7 +36,7 @@ themes:
     table_title_color: '#28333f'
     table_title_family: IBM Plex Sans
     table_title_size: 30
-    table_title_weight: normal
+    table_title_weight: bold
     table_subtitle_color: '#28333f'
     table_subtitle_family: IBM Plex Sans
     table_subtitle_size: 18
@@ -47,16 +47,16 @@ themes:
     table_caption_weight: normal
     header_text_color: "#ffffff"
     header_text_family: IBM Plex Sans
-    header_text_size: 22
-    header_text_weight: 700
+    header_text_size: 21
+    header_text_weight: bold
     cell_text_color: '#28333f'
     cell_text_family: IBM Plex Sans
     cell_text_size: 18
-    cell_text_weight: 400
-    link_color: "#e59fd7"
+    cell_text_weight: normal
+    link_color: "#287e68"
     header_background: "#385573"
-    zebra_stripe_color: "#f6fcfa"
-    desactivated_controls: "#bbbdc0"
+    zebra_stripe_color: "#fafafa"
+    desactivated_controls: "#becacc"
   dark:
     logo: datasketch
     logo_position: right
@@ -89,30 +89,30 @@ themes:
     legend_family: IBM Plex Sans
     grid_color: '#a1a0a5'
     grid_line_type: Dot
-    table_title_color: '#28333f'
+    table_title_color: '#ffffff'
     table_title_family: IBM Plex Sans
     table_title_size: 30
-    table_title_weight: normal
-    table_subtitle_color: '#28333f'
+    table_title_weight: bold
+    table_subtitle_color: '#ffffff'
     table_subtitle_family: IBM Plex Sans
     table_subtitle_size: 18
     table_subtitle_weight: normal
-    table_caption_color: '#28333f'
+    table_caption_color: '#ffffff'
     table_caption_family: IBM Plex Sans
     table_caption_size: 11
     table_caption_weight: normal
     header_text_color: "#ffffff"
     header_text_family: IBM Plex Sans
-    header_text_size: 22
-    header_text_weight: 700
-    cell_text_color: '#28333f'
+    header_text_size: 21
+    header_text_weight: bold
+    cell_text_color: '#ffffff'
     cell_text_family: IBM Plex Sans
     cell_text_size: 18
-    cell_text_weight: 400
-    link_color: "#e59fd7"
+    cell_text_weight: normal
+    link_color: "#99e8b3"
     header_background: "#385573"
-    zebra_stripe_color: "#f6fcfa"
-    desactivated_controls: "#bbbdc0"
+    zebra_stripe_color: "#2b3238"
+    desactivated_controls: "#73777d"
 palettes:
   light:
     main:
