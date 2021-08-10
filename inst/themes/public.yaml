@@ -55,7 +55,7 @@ themes:
     cell_text_weight: normal
     link_color: "#287e68"
     header_background: "#385573"
-    table_background: "#fffff"
+    table_background: "#ffffff"
     zebra_stripe_color: "#fafafa"
     desactivated_controls: "#becacc"
   dark:
