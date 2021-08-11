@@ -31,6 +31,31 @@ themes:
     grid_line_type: ShortDot
     legend_color: '#061410'
     legend_family: Lato
+    table_title_color: "#2b303a"
+    table_title_family: Helvetica
+    table_title_size: 30
+    table_title_weight: normal
+    table_subtitle_color: "#2b303a"
+    table_subtitle_family: Helvetica
+    table_subtitle_size: 18
+    table_subtitle_weight: normal
+    table_caption_color: "#2b303a"
+    table_caption_family: Helvetica
+    table_caption_size: 11
+    table_caption_weight: normal
+    header_text_color: "#ffffff"
+    header_text_family: Helvetica
+    header_text_size: 22
+    header_text_weight: normal
+    cell_text_color: "#2b303a"
+    cell_text_family: Helvetica
+    cell_text_size: 18
+    cell_text_weight: normal
+    link_color: "#078083"
+    header_background: "#78cb48"
+    table_background: "#fffff"
+    zebra_stripe_color: "#f6fcfa"
+    desactivated_controls: "#bbbdc0"
   dark:
     logo: jamundi
     logo_position: right
@@ -63,6 +88,31 @@ themes:
     grid_line_type: ShortDot
     legend_color: '#ffffff'
     legend_family: Lato
+    table_title_color: "#ffffff"
+    table_title_family: Helvetica
+    table_title_size: 30
+    table_title_weight: normal
+    table_subtitle_color: "#ffffff"
+    table_subtitle_family: Helvetica
+    table_subtitle_size: 18
+    table_subtitle_weight: normal
+    table_caption_color: "#ffffff"
+    table_caption_family: Helvetica
+    table_caption_size: 11
+    table_caption_weight: normal
+    header_text_color: "#ffffff"
+    header_text_family: Helvetica
+    header_text_size: 22
+    header_text_weight: normal
+    cell_text_color: "#ffffff"
+    cell_text_family: Helvetica
+    cell_text_size: 18
+    cell_text_weight: normal
+    link_color: "#69d6b6"
+    header_background: "#78cb48"
+    table_background: "#222526"
+    zebra_stripe_color: "#2e3237"
+    desactivated_controls: "#73777d"
 palettes:
   light:
     main:

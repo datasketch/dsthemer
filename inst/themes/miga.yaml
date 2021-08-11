@@ -37,6 +37,31 @@ themes:
     grid_line_type: Dot
     legend_color: '#232323'
     legend_family: PT Sans Narrow
+    table_title_color: "#2b303a"
+    table_title_family: PT Sans Narrow
+    table_title_size: 30
+    table_title_weight: normal
+    table_subtitle_color: "#2b303a"
+    table_subtitle_family: PT Sans Narrow
+    table_subtitle_size: 18
+    table_subtitle_weight: normal
+    table_caption_color: "#2b303a"
+    table_caption_family: PT Sans Narrow
+    table_caption_size: 11
+    table_caption_weight: normal
+    header_text_color: "#ffffff"
+    header_text_family: PT Sans Narrow
+    header_text_size: 22
+    header_text_weight: normal
+    cell_text_color: "#2b303a"
+    cell_text_family: PT Sans Narrow
+    cell_text_size: 18
+    cell_text_weight: normal
+    link_color: "#078083"
+    header_background: "#1b7267"
+    table_background: "#fffff"
+    zebra_stripe_color: "#f6fcfa"
+    desactivated_controls: "#bbbdc0"
   dark:
     #plot_margin_left: 50
     #plot_margin_right: 50
@@ -75,6 +100,31 @@ themes:
     grid_line_type: Dot
     legend_color: '#ffffff'
     legend_family: PT Sans Narrow
+    table_title_color: "#ffffff"
+    table_title_family: PT Sans Narrow
+    table_title_size: 30
+    table_title_weight: normal
+    table_subtitle_color: "#ffffff"
+    table_subtitle_family: PT Sans Narrow
+    table_subtitle_size: 18
+    table_subtitle_weight: normal
+    table_caption_color: "#ffffff"
+    table_caption_family: PT Sans Narrow
+    table_caption_size: 11
+    table_caption_weight: normal
+    header_text_color: "#ffffff"
+    header_text_family: PT Sans Narrow
+    header_text_size: 22
+    header_text_weight: normal
+    cell_text_color: "#ffffff"
+    cell_text_family: PT Sans Narrow
+    cell_text_size: 18
+    cell_text_weight: normal
+    link_color: "#69d6b6"
+    header_background: "#1b7267"
+    table_background: "#222526"
+    zebra_stripe_color: "#2e3237"
+    desactivated_controls: "#73777d"
 palettes:
   light:
     main:

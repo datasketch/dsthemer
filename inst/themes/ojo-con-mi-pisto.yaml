@@ -108,11 +108,11 @@ themes:
     header_text_color: "#ffffff"
     header_text_family: Fjalla One
     header_text_size: 22
-    header_text_weight: 700
+    header_text_weight: normal
     cell_text_color: "#ffffff"
     cell_text_family: Lato
     cell_text_size: 18
-    cell_text_weight: 400
+    cell_text_weight: normal
     link_color: "#69d6b6"
     header_background: "#d34028"
     table_background: "#222526"
