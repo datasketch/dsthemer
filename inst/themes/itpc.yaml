@@ -60,7 +60,8 @@ themes:
     cell_text_weight: normal
     link_color: "#078083"
     header_background: "#e7322d"
-    table_background: "#fffff"
+    table_background: "#ffffff"
+    table_border_color: "#BBBDC0"
     zebra_stripe_color: "#f6fcfa"
     desactivated_controls: "#bbbdc0"
   dark:
@@ -125,6 +126,7 @@ themes:
     link_color: "#69d6b6"
     header_background: "#e7322d"
     table_background: "#222526"
+    table_border_color: "#73777D"
     zebra_stripe_color: "#2e3237"
     desactivated_controls: "#73777d"
 palettes:
