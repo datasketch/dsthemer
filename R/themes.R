@@ -1,55 +1,10 @@
-#' Get Themer
-#' @export
-dsthemer_get <- function(org, theme = NULL, palette = NULL){
-  if(!org %in% org_dsthemer_list())
-    stop("org doesn't have a defined theme")
-  l <- load_dsthemer_yaml(org)
-  first_dsthemer_name <- names(l$themes)[1]
-  theme <- theme %||% first_dsthemer_name
-  available_themes <- names(l$themes)
-  if(!theme %in% available_themes)
-    stop("Theme does not exist for this org. Try one of: ",
-         paste(available_themes, collapse = ", "))
-  thm <- modifyList(l$themes[[first_dsthemer_name]], l$themes[[theme]], keep.null = TRUE)
-  first_palette_name <- names(l$palettes[[1]])[1]
-  palette <- palette %||% first_palette_name
-  thm$palette_colors <- l$palettes[[theme]][[palette]]$colors
-  if(!is.null(theme))
-    thm$logo <- dsthemer_logo(org, theme)
-  thm
-}
 
 #' @export
-dsthemer_list <- function(org = NULL){
-  if(is.null(org)){
-    themes <- list.files(system.file("themes", package = "dsthemer"))
-    return(file_path_sans_ext(themes))
-  }
-  l <- load_dsthemer_yaml(org)
-  names(l$themes)
-}
-
-#' @export
-dsthemer_palettes <- function(org, theme, type = NULL){
-  l <- load_dsthemer_yaml(org)
-  x <- names(l$palettes[[theme]])
-  names(x) <- unlist(lapply(l$palettes[[theme]], function(x) x$name))
-  if(is.null(type)){
-    return(x)
-  } else{
-    thm <- l$palettes[[theme]]
-    thm <- Filter(function(x){ x$type == type}, thm)
-    nms <- unlist(lapply(thm, function(x) x$name))
-    x <- names(thm)
-    names(x) <- nms
-    return(x)
-  }
-}
-
-#' @export
-dsthemer_palette <- function(org, theme, palette){
-  l <- load_dsthemer_yaml(org)
-  l$palettes[[theme]][[palette]]$colors
+dsthemer_palette <- function(org, theme = "light", palette = NULL){
+  l <- load_dsthemer_json(org)
+  palette <- palette %||% "categorical"
+  palette <- paste0("color_palette_", palette)
+  l[[theme]]$palettes[[palette]]
 }
 
 #' @export
@@ -57,21 +12,32 @@ org_dsthemer_list <- function(){
   file_path_sans_ext(list.files(system.file("themes", package = "dsthemer")))
 }
 
+dsthemer_logo <- function(org, theme) {
+  files_type <- c("svg", "png")
+  img_path <- purrr::map_chr(files_type, ~ {
+    system.file(file.path("logos", org, paste0(theme, ".", .x)), package = "dsthemer")
+  }, .id = NULL) |>
+    purrr::discard(~ !nzchar(.)) |>
+    head(1)
 
-dsthemer_logo <- function(org, theme){
-  system.file(file.path("logos",org, paste0(theme, ".png")), package = "dsthemer")
+  if (length(img_path) == 0) {
+    warning("Logo file not found for ", org, " with theme ", theme, ".")
+    return(NULL)
+  } else {
+    return(img_path)
+  }
 }
 
-load_dsthemer_yaml <- function(org){
+
+load_dsthemer_json <- function(org) {
+  org <- org %||% "datasketch"
   themes_path <- system.file("themes", package = "dsthemer")
   all_orgs <- file_path_sans_ext(list.files(themes_path))
   if(!org %in% all_orgs)
     stop("Org does not exists, must be one of: ", paste(all_orgs, collapse = ", "))
-  # load org yaml
-  yaml::yaml.load_file(file.path(themes_path, paste0(org, ".yaml")))
+
+  jsonlite::read_json(file.path(themes_path, paste0(org, ".json")))
 }
-
-
 
 
 
