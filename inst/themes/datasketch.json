@@ -10,7 +10,7 @@
   "border_width": null,
   "caption_align": null,
   "caption_color": null,
-  "caption_family": "Roboto",
+  "caption_family": null,
   "caption_link": null,
   "caption_margin": null,
   "caption_size": null,
@@ -58,7 +58,7 @@
   "legend_orientation": null,
   "legend_position": null,
   "legend_vertical_align": null,
-  "legend_text_family": "Roboto",
+  "legend_text_family": null,
   "legend_align": null,
   "legend_reversed": null,
   "legend_text_horizontal_align": null,
@@ -86,18 +86,18 @@
   "subtitle_align": null,
   "subtitle_size": null,
   "subtitle_weight": null,
-  "text_family": "Roboto",
+  "text_family": null,
   "text_size": null,
   "text_wrap": null,
   "title_align": null,
   "title_axis_size": null,
-  "title_family": "Roboto",
+  "title_family": null,
   "title_legend": null,
   "title_size": null,
   "title_weight": null,
   "tooltip_text_color": null,
   "tooltip_opacity": null,
-  "tooltip_text_family": "Roboto",
+  "tooltip_text_family": null,
   "tooltip_text_size": null,
   "tooltip_width": null,
   "light": {
@@ -123,31 +123,31 @@
     "tooltip_background": null,
     "palettes": {
       "color_palette_categorical": [
-        "#0c2d41",
-        "#f03351",
-        "#FFD11F",
-        "#10410c",
-        "#3a0c41",
-        "#3357f0",
-        "#881fff"
+        "#3a3766",
+        "#5b5fde",
+        "#f06142",
+        "#99e8b3",
+        "#32a8ce",
+        "#996295",
+        "#e59fd7"
       ],
       "color_palette_divergening": [
-        "#4e8bb9",
-        "#A7C5D8",
-        "#E4F4FB",
-        "#f7f5f7",
-        "#F4E6E8",
-        "#EBBDC3",
-        "#ED8291"
+        "#ff844e",
+        "#ffa154",
+        "#ffc48b",
+        "#eef0f1",
+        "#a0c7da",
+        "#57a0c5",
+        "#255b89"
       ],
       "color_palette_sequential": [
-        "#0c2d41",
-        "#144f73",
-        "#4e8bb9",
-        "#A7C5D8",
-        "#c4e9f9",
-        "#E4F4FB",
-        "#f2f2f2"
+        "#b8f3ca",
+        "#add79c",
+        "#8dbd93",
+        "#70a38e",
+        "#568989",
+        "#3f6f83",
+        "#28557d"
       ]
     }
   },
@@ -175,31 +175,31 @@
     "tooltip_text_color": null,
     "palettes": {
       "color_palette_categorical": [
-        "#0c2d41",
-        "#f03351",
-        "#FFD11F",
-        "#10410c",
-        "#3a0c41",
-        "#3357f0",
-        "#881fff"
+        "#4f63db",
+        "#d760e8",
+        "#ff5ba6",
+        "#ffa92a",
+        "#f8deac",
+        "#9de2c5",
+        "#0b8a81"
       ],
       "color_palette_divergening": [
-        "#4e8bb9",
-        "#A7C5D8",
-        "#E4F4FB",
+        "#6f56fa",
+        "#ad87fc",
+        "#d6bdfb",
         "#f7f5f7",
-        "#F4E6E8",
-        "#EBBDC3",
-        "#ED8291"
+        "#ffc9aa",
+        "#ff9791",
+        "#fc4eb9"
       ],
       "color_palette_sequential": [
-        "#0c2d41",
-        "#144f73",
-        "#4e8bb9",
-        "#A7C5D8",
-        "#c4e9f9",
-        "#E4F4FB",
-        "#f2f2f2"
+        "#ff91ff",
+        "#f082f8",
+        "#dd77f1",
+        "#c66eeb",
+        "#a968e5",
+        "#8465e0",
+        "#4f63db"
       ]
     }
   }
