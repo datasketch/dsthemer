@@ -1,3 +1,18 @@
+#' @export
+dsthemer <- function(org, theme = "light") {
+  remove_theme <- setdiff( c("light", "dark"), theme)
+  l <- load_dsthemer_json(org)
+  remove_dark <- grep("palettes", names(l$dark))
+  l$dark <- l$dark[-remove_dark]
+  remove_light <- grep("palettes", names(l$light))
+  l$light <- l$dark[-remove_light]
+  l <- l[-grep(remove_theme, names(l))]
+  l_choose <- l[[theme]]
+  l[[theme]] <- NULL
+  l <- c(l, l_choose)
+  l
+}
+
 
 #' @export
 dsthemer_palette <- function(org, theme = "light", palette = NULL){
