@@ -5,7 +5,7 @@ dsthemer <- function(org, theme = "light") {
   remove_dark <- grep("palettes", names(l$dark))
   l$dark <- l$dark[-remove_dark]
   remove_light <- grep("palettes", names(l$light))
-  l$light <- l$dark[-remove_light]
+  l$light <- l$light[-remove_light]
   l <- l[-grep(remove_theme, names(l))]
   l_choose <- l[[theme]]
   l[[theme]] <- NULL
