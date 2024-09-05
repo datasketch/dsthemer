@@ -22,6 +22,13 @@ dsthemer_palette <- function(org, theme = "light", palette = NULL){
   l[[theme]]$palettes[[palette]]
 }
 
+
+#' @export
+dsthemer_background <- function(org, theme = "light") {
+  l <- load_dsthemer_json(org)
+  l[[theme]]$background_color
+}
+
 #' @export
 org_dsthemer_list <- function(){
   file_path_sans_ext(list.files(system.file("themes", package = "dsthemer")))

@@ -2,5 +2,6 @@
 
 export(available_fonts)
 export(dsthemer)
+export(dsthemer_background)
 export(dsthemer_palette)
 export(org_dsthemer_list)

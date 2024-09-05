@@ -19,7 +19,3 @@ Depends:
     dstools
 Suggests: 
     testthat
-Imports: 
-    dsopts
-Remotes:
-    datasketch/dsopts
