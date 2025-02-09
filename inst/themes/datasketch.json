@@ -62,7 +62,7 @@
   "legend_text_margin": null,
   "legend_text_size": null,
   "legend_text_vertical_align": null,
-  "legend_text_wrap": null,
+  "legend_text_wrap": 50,
   //"line_marker": null,
   "line_marker_show": null,
   "line_marker_size": null,
@@ -85,7 +85,7 @@
   "subtitle_weight": null,
   "text_family": null,
   "text_size": null,
-  "text_wrap": null,
+  "text_wrap": 50,
   "title_align": null,
   "title_axis_size": null,
   "title_family": null,
@@ -176,7 +176,6 @@
     "title_axis_color": null,
     "title_color": null,
     "tooltip_background": null,
-    "tooltip_text_color": null,
     "palettes": {
       "color_palette_categorical": [
         "#4f63db",

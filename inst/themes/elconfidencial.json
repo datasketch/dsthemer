@@ -29,7 +29,8 @@
   //"format_number_prefix": null,
   //"format_sample_cat": null,
   //"format_sample_dat": null,
-  //"format_sample_num": null,
+  "format_sample_num": "1.234,92",
+  "axis_y_format_sample_num": "1.234,92",
   "grid_line_type": null,
   "grid_size": null,
   "grid_x_line_type": "ShortDot",
@@ -125,11 +126,10 @@
       "color_palette_categorical": [
         "#0c2d41",
         "#f03351",
-        "#FFD11F",
-        "#10410c",
-        "#3a0c41",
-        "#3357f0",
-        "#881fff"
+        "#bfbdb2",
+        "#e8e6dc",
+        "#4e8bb9",
+        "#EBBDC3"
       ],
       "color_palette_divergening": [
         "#4e8bb9",
@@ -141,13 +141,11 @@
         "#ED8291"
       ],
       "color_palette_sequential": [
-        "#0c2d41",
-        "#144f73",
-        "#4e8bb9",
-        "#A7C5D8",
-        "#c4e9f9",
-        "#E4F4FB",
-        "#f2f2f2"
+        "#f03351",
+        "#f1cacb",
+        "#e8e6dc",
+        "#586e79",
+        "#0c2d41"
       ]
     }
   },
@@ -176,16 +174,14 @@
     "title_axis_color": null,
     "title_color": null,
     "tooltip_background": null,
-    "tooltip_text_color": null,
     "palettes": {
       "color_palette_categorical": [
         "#0c2d41",
         "#f03351",
-        "#FFD11F",
-        "#10410c",
-        "#3a0c41",
-        "#3357f0",
-        "#881fff"
+        "#bfbdb2",
+        "#e8e6dc",
+        "#4e8bb9",
+        "#EBBDC3"
       ],
       "color_palette_divergening": [
         "#4e8bb9",
