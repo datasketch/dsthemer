@@ -120,7 +120,7 @@
     "subtitle_color": "#333333",
     "text_color": "#b4b4b4",
     "title_axis_color": null,
-    "title_color": "#333333",
+    "title_color": "#000000",
     "tooltip_background": null,
     "palettes": {
       "color_palette_categorical": [
