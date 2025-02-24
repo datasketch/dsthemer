@@ -3,8 +3,8 @@ config_panel_ui <- function(id) {
   ns <- NS(id)
   tagList(
     tags$head(
-      includeScript(dsmods_sys_file("lib/panelControl/panelControl.js")),
-      includeCSS(dsmods_sys_file("lib/panelControl/panelControl.css"))
+      includeScript(dsthemer_sys_file("lib/panelControl/panelControl.js")),
+      includeCSS(dsthemer_sys_file("lib/panelControl/panelControl.css"))
     ),
     panel(
       title = "Graph configuration",
@@ -23,7 +23,7 @@ config_panel_ui <- function(id) {
 config_panel_server <- function(id, r) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
-    path <- dsmods_sys_file("defaults/basic_plots/parmesan")
+    path <- dsthemer_sys_file("defaults/basic_plots/parmesan")
     parmesan <- parmesan_load(path)  # Cargar configuración YAML
     parmesan_inputs <- parmesan_watch(input, parmesan)  # Observar cambios en inputs
     r_parmesan <- reactiveValues()
@@ -164,7 +164,7 @@ config_panel_server <- function(id, r) {
       req(parmesan_inputs()$theme)
 
         r$theme <- parmesan_inputs()$theme
-        r$agg_palette <- dsthemer::dsthemer_palette(r$org, theme = r$theme, palette = r$palette)
+        r$agg_palette <- dsthemer_palette(r$org, theme = r$theme, palette = r$palette)
         r_parmesan$params[[paste0("color_palette_", r$palette)]] <- input$color_palette
     })
 
