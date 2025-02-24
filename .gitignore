@@ -1,8 +1,11 @@
 .Rbuildignore
-
-# History files
+.Rproj.user
 .Rhistory
+.Rbuildignore
+# History files
+.Rhistory*
 .Rapp.history
+.DS_Store
 
 # Example code in package build process
 *-Ex.R
