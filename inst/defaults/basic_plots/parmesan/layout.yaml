@@ -1,0 +1,21 @@
+titles:
+  label: titles
+  description: Escribe tu texto en el campo y presiona Enter
+  inputs:
+    - title
+    - subtitle
+    - caption
+    - title_axis_x
+    - title_axis_y
+colors:
+  label: colors
+  inputs:
+    - theme
+    - color_palette
+chart:
+  label: chart
+  inputs:
+    - agg
+    - percentage
+    - bar_orientation
+    - bar_graph_type

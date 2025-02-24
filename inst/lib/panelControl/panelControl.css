@@ -1,0 +1,87 @@
+/* 🔹 Mantiene los estilos preexistentes del panel */
+[id*="-theme_view"] {
+ resize: none;
+}
+
+/* 🔹 Permite mover el panel desde la cabecera */
+[id*="-theme_view"] .panel-header {
+  cursor: grab;
+  z-index: 11111 !important;
+}
+
+.panel-header {
+  z-index: auto !important;
+}
+
+/* Esquina de redimensionamiento (botón pequeño en la esquina) */
+.resize-handle {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  cursor: nwse-resize;
+  border-radius: 2px;
+}
+
+.section-parmesan {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+
+.tooltip-theme {
+  position: relative;
+  display: inline-block;
+  margin-left: 3%;
+}
+
+.tooltip-theme .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  max-width: 300px;
+  background-color: #435b69;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1000 !important;
+  transform: translateX(-50%); /* Centrado respecto al icono */
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: normal;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  line-height: 1.5;
+  letter-spacing: 0px !important;
+}
+
+.tooltip-theme:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.shiny-options-group {
+  display: flex;
+  gap: 20px;
+}
+
+.control-label {
+  font-size: 15px;
+  margin-top: 2%;
+}
+
+.hidden-panel {
+ display: none !important;
+}
+
+
+.recalculating {
+  opacity: 1 !important;
+}

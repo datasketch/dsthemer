@@ -1,0 +1,100 @@
+---
+title:
+  show: true
+  input_type: passiveTextInput
+  input_params:
+    label: Title
+    value: " "
+subtitle:
+  show: true
+  input_type: passiveTextInput
+  input_params:
+    label: Subtitle
+    value: " "
+caption:
+  show: true
+  input_type: passiveTextInput
+  input_params:
+    label: Caption
+    value: " "
+title_axis_x:
+  show: true
+  show_if:
+    has_bar()
+  input_type: passiveTextInput
+  input_params:
+    label: Axis x
+    value: " "
+title_axis_y:
+  show: true
+  show_if:
+    has_bar()
+  input_type: passiveTextInput
+  input_params:
+    label: Axis y
+    value: " "
+theme:
+  show: true
+  description: Select the light or dark theme to customise the design of the chart.
+  input_type: radioButtons
+  input_params:
+    label: Theme
+    choices:
+      Light:
+      - light
+      Dark:
+      - dark
+    inline: true
+color_palette:
+  show: true
+  description: Click on the color circles to select the one you want. Once you've chosen the color, press 'Choose'. If you'd like to clear the selection, click on the trash can icon.
+  input_type: colorPaletteInput
+  input_params:
+    label: Change or add colors
+    colors: agg_palette()
+agg:
+  show: true
+  show_if:
+    has_data_num()
+  input_type: selectizeInput
+  input_params:
+    label: Aggregation
+    choices:
+      Total:
+      - sum
+      Mean:
+      - mean
+      Max:
+      - max
+      Min:
+      - min
+percentage:
+  show: true
+  input_type: checkboxInput
+  input_params:
+    label: Percentage
+bar_orientation:
+  show: true
+  show_if:
+    has_bar()
+  input_type: selectizeInput
+  input_params:
+    label: Orientation
+    choices:
+      Horizontal:
+      - hor
+      Vertical:
+      - ver
+bar_graph_type:
+  show: true
+  show_if:
+    has_bar()
+  input_type: selectizeInput
+  input_params:
+    label: Bar type
+    choices:
+      Grouped:
+      - grouped
+      Stacked:
+      - stacked
+
