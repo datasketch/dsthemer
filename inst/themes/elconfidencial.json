@@ -159,7 +159,7 @@
     "border_color": null,
     "caption_color": "#FAFAFA",
     "tooltip_text_color": null,
-    "background_color": "rgba(224, 224, 224, 1)",
+    "background_color": "#000000",
     "datalabel_color": null,
     "grid_color": null,
     "grid_x_color": null,

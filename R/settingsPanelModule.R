@@ -25,20 +25,19 @@ config_panel_server <- function(id, r) {
     ns <- session$ns
     path <- dsthemer_sys_file("defaults/basic_plots/parmesan")
     parmesan <- parmesan_load(path)  # Cargar configuración YAML
-    parmesan_inputs <- parmesan_watch(input, parmesan)  # Observar cambios en inputs
     parmesan_updates <- yaml::read_yaml(dsthemer_sys_file("defaults/basic_plots/update_inputs.yaml"))$shiny
     r_parmesan <- reactiveValues()
-    # Actualizar valores reactivos si son funciones ()
+
 
     observe({
-      r_parmesan$params <- parmesan_inputs()
-
+      r$palette <- "categorical"
       for (section in names(parmesan)) {
         if (!is.null(parmesan[[section]]$inputs) && length(parmesan[[section]]$inputs) > 0) {
           for (input_def in parmesan[[section]]$inputs) {
             if (!is.null(input_def$input_params)) {
               for (param in names(input_def$input_params)) {
                 param_value <- input_def$input_params[[param]]
+                # Actualizar valores reactivos si son funciones ()
                 if (!is.null(param_value) && is.character(param_value) && length(param_value) == 1 && grepl("\\(\\)$", param_value)) {
                   param_name <- gsub("\\(\\)$", "", param_value)
                   if (!is.null(r[[param_name]])) {
@@ -46,20 +45,32 @@ config_panel_server <- function(id, r) {
                   }
                 }
               }
+              # actualiza los inputs update... segun el widget
+              if (!is.null(input[[input_def$id]])) {
+                if (!any(grepl("\\(\\)$", input[[input_def$id]]))) {
+                  fn_update <- paste0("update", gsub("(^|[[:space:]])([[:alpha:]])", "\\1\\U\\2", input_def$input_type, perl=TRUE))
+                  param_update <- parmesan_updates[[input_def$input_type]]$update_param
+                  fn_params <- list(input[[input_def$id]])
+                  names(fn_params) <- param_update
+                  do.call(fn_update, c(list(session = session, inputId = input_def$id), fn_params))
+                }
+                r_parmesan$params[[input_def$id]] <- input[[input_def$id]]
+              }
             }
           }
         }
       }
 
-      if (!is.null(r$viz_plot)) {
-        palette <- "categorical"
+
+      if (!is.null(r$has_map)) {
         if (r$has_map) {
-          palette <- "sequential"
+          req(r$viz_plot)
+          r$palette <- "sequential"
           r_parmesan$params$map_name <- gsub("map_", "", r$viz_plot)
         }
-        r$palette <- palette
       }
     })
+
 
     # Renderizar los inputs dinámicamente
     output$dynamic_inputs <- renderUI({
@@ -141,36 +152,12 @@ config_panel_server <- function(id, r) {
     })
 
 
-
-    # Sincronización de inputs con valores reactivos
     observe({
-      for (section in names(parmesan)) {
-        if (!is.null(parmesan[[section]]$inputs) && length(parmesan[[section]]$inputs) > 0) {
-          for (input_def in parmesan[[section]]$inputs) {
-
-    # Update de inputs
-            if (!is.null(input[[input_def$id]])) {
-              if (!any(grepl("\\(\\)$", input[[input_def$id]]))) {
-                r_parmesan$params[[input_def$id]] <- input[[input_def$id]]
-                fn_update <- paste0("update", gsub("(^|[[:space:]])([[:alpha:]])", "\\1\\U\\2", input_def$input_type, perl=TRUE))
-                param_update <- parmesan_updates[[input_def$input_type]]$update_param
-                fn_params <- list(input[[input_def$id]])
-                names(fn_params) <- param_update
-                do.call(fn_update, c(list(session = session, inputId = input_def$id), fn_params))
-              }
-            }
-          }
-        }
-      }
-    })
-
-
-    observe({
-      req(parmesan_inputs()$theme)
-
-      r$theme <- parmesan_inputs()$theme
+      req(r_parmesan$params$theme)
+      req(r$palette)
+      r$theme <- r_parmesan$params$theme
       r$agg_palette <- dsthemer_palette(r$org, theme = r$theme, palette = r$palette)
-      r_parmesan$params[[paste0("color_palette_", r$palette)]] <- input$color_palette
+      updateColorPaletteInput(session = session, inputId = "color_palette", colors = r$agg_palette)
     })
 
 
@@ -188,10 +175,10 @@ config_panel_server <- function(id, r) {
         ls$theme <- NULL
       }
       if ("color_palette" %in% names(ls)) {
+        ls[[paste0("color_palette_", r$palette)]] <- ls$color_palette
         ls$color_palette <- NULL
       }
-      #non_null_params <- Filter(Negate(is.null), r_parmesan$params)
-      #r_parmesan$params <- modifyList(r_parmesan$params, non_null_params)
+      ls <- Filter(Negate(is.null), ls)
       ls
     })
 

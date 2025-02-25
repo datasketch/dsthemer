@@ -51,6 +51,7 @@ server <- function(input, output, session) {
   )
 
   observe({
+    r$viz_plot <- selectedViz$activeIcon()
     if (is.null(selectedViz$activeIcon())) {
       hide("open_config")  # Ocultar si no hay icono activo
     } else {
@@ -60,17 +61,13 @@ server <- function(input, output, session) {
     }
   })
 
-  # observeEvent(selectedViz$activeIcon(), {
-  #  #  if (is.null(selectedViz$activeIcon())) return()
-  #  # print(selectedViz$activeIcon())
-  #   if (selectedViz$activeIcon() == "bar") {
-  #     r$var_cat_colors <- c("a", "b")
-  #     r$default_var_color <- "a"
-  #     r$has_bar <- TRUE
-  #   } else {
-  #     r$has_bar <- FALSE
-  #   }
-  # })
+  observeEvent(selectedViz$activeIcon(), {
+    if (selectedViz$activeIcon() == "bar") {
+      r$has_bar <- TRUE
+    } else {
+      r$has_bar <- FALSE
+    }
+  })
 
   conf <- config_panel_server("config_panel", r)
 

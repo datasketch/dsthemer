@@ -5,7 +5,7 @@ file_path_sans_ext <- function (x, compression = FALSE)
   sub("([^.]+)\\.[[:alnum:]]+$", "\\1", x)
 }
 
-
+#' @export
 dsthemer_sys_file <- function(...){
   system.file(..., package = "dsthemer")
 }
