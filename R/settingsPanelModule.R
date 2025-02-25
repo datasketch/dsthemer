@@ -26,6 +26,7 @@ config_panel_server <- function(id, r) {
     path <- dsthemer_sys_file("defaults/basic_plots/parmesan")
     parmesan <- parmesan_load(path)  # Cargar configuración YAML
     parmesan_inputs <- parmesan_watch(input, parmesan)  # Observar cambios en inputs
+    parmesan_updates <- yaml::read_yaml(dsthemer_sys_file("defaults/basic_plots/update_inputs.yaml"))$shiny
     r_parmesan <- reactiveValues()
     # Actualizar valores reactivos si son funciones ()
 
@@ -50,15 +51,14 @@ config_panel_server <- function(id, r) {
         }
       }
 
-     if (!is.null(r$viz_plot)) {
-      palette <- "categorical"
-      print(r$has_map)
-      if (r$has_map) {
-        palette <- "sequential"
-        r_parmesan$params$map_name <- gsub("map_", "", r$viz_plot)
+      if (!is.null(r$viz_plot)) {
+        palette <- "categorical"
+        if (r$has_map) {
+          palette <- "sequential"
+          r_parmesan$params$map_name <- gsub("map_", "", r$viz_plot)
+        }
+        r$palette <- palette
       }
-      r$palette <- palette
-     }
     })
 
     # Renderizar los inputs dinámicamente
@@ -130,6 +130,7 @@ config_panel_server <- function(id, r) {
             } else {
               return()
             }
+
           })
           if (!is.null(section_inputs)) {
             input_list <- append(input_list, section_inputs)
@@ -143,29 +144,33 @@ config_panel_server <- function(id, r) {
 
     # Sincronización de inputs con valores reactivos
     observe({
-
       for (section in names(parmesan)) {
         if (!is.null(parmesan[[section]]$inputs) && length(parmesan[[section]]$inputs) > 0) {
           for (input_def in parmesan[[section]]$inputs) {
-            observeEvent(input[[ns(input_def$id)]], {
-              isolate({
-                r[[input_def$id]] <- input[[ns(input_def$id)]]
-              })
-            }, ignoreNULL = FALSE, ignoreInit = FALSE)
+
+
+            if (!is.null(input[[input_def$id]])) {
+              if (!any(grepl("\\(\\)$", input[[input_def$id]]))) {
+                r_parmesan$params[[input_def$id]] <- input[[input_def$id]]
+                fn_update <- paste0("update", gsub("(^|[[:space:]])([[:alpha:]])", "\\1\\U\\2", input_def$input_type, perl=TRUE))
+                param_update <- parmesan_updates[[input_def$input_type]]$update_param
+                fn_params <- list(input[[input_def$id]])
+                names(fn_params) <- param_update
+                do.call(fn_update, c(list(session = session, inputId = input_def$id), fn_params))
+              }
+            }
           }
         }
       }
-
-
     })
 
 
     observe({
       req(parmesan_inputs()$theme)
 
-        r$theme <- parmesan_inputs()$theme
-        r$agg_palette <- dsthemer_palette(r$org, theme = r$theme, palette = r$palette)
-        r_parmesan$params[[paste0("color_palette_", r$palette)]] <- input$color_palette
+      r$theme <- parmesan_inputs()$theme
+      r$agg_palette <- dsthemer_palette(r$org, theme = r$theme, palette = r$palette)
+      r_parmesan$params[[paste0("color_palette_", r$palette)]] <- input$color_palette
     })
 
     # observeEvent(input$color_palette, {

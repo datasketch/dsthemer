@@ -93,8 +93,9 @@ bar_graph_type:
   input_params:
     label: Bar type
     choices:
-      Grouped:
-      - grouped
       Stacked:
       - stacked
+      Grouped:
+      - grouped
+
 
