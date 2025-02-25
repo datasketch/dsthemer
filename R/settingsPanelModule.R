@@ -148,7 +148,7 @@ config_panel_server <- function(id, r) {
         if (!is.null(parmesan[[section]]$inputs) && length(parmesan[[section]]$inputs) > 0) {
           for (input_def in parmesan[[section]]$inputs) {
 
-
+    # Update de inputs
             if (!is.null(input[[input_def$id]])) {
               if (!any(grepl("\\(\\)$", input[[input_def$id]]))) {
                 r_parmesan$params[[input_def$id]] <- input[[input_def$id]]
@@ -172,10 +172,6 @@ config_panel_server <- function(id, r) {
       r$agg_palette <- dsthemer_palette(r$org, theme = r$theme, palette = r$palette)
       r_parmesan$params[[paste0("color_palette_", r$palette)]] <- input$color_palette
     })
-
-    # observeEvent(input$color_palette, {
-    #   r_parmesan$params[[paste0("color_palette_", r$palette)]] <- input$color_palette
-    # })
 
 
     observe({
