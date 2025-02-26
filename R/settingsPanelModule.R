@@ -32,12 +32,15 @@ config_panel_server <- function(id, r) {
 
     observe({
       r$palette <- "categorical"
-      if (!is.null(r$has_map)) {
-        if (r$has_map) {
-          req(r$viz_plot)
+      if (!is.null(r$viz_plot)) {
+          r$has_axis <- r$viz_plot %in% c("bar", "line")
+          r$has_bar <- r$viz_plot %in% "bar"
+          r$has_line <- r$viz_plot %in% "line"
+          r$has_map <- grepl("map_", r$viz_plot)
+          if (r$has_map) {
           r$palette <- "sequential"
           r_parmesan$params$map_name <- gsub("map_", "", r$viz_plot)
-        }
+          }
       }
       r$agg_palette <- dsthemer_palette(r$org, palette = r$palette)
       #updateColorPaletteInput(session = session, inputId = "color_palette", colors = r$agg_palette)
@@ -113,6 +116,11 @@ config_panel_server <- function(id, r) {
                   if (!is.null(r[[param_name]])) {
                     input_params[[param]] <- r[[param_name]]
                   }
+                }
+
+                if (!is.null(r_parmesan$params[[input_def$id]])) {
+                  param_update <- parmesan_updates[[input_def$input_type]]$update_param
+                  input_params[[param_update]] <- r_parmesan$params[[input_def$id]]
                 }
               }
             }

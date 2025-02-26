@@ -20,7 +20,7 @@ caption:
 title_axis_x:
   show: true
   show_if:
-    has_bar()
+    has_axis()
   input_type: passiveTextInput
   input_params:
     label: Axis x
@@ -28,7 +28,7 @@ title_axis_x:
 title_axis_y:
   show: true
   show_if:
-    has_bar()
+    has_axis()
   input_type: passiveTextInput
   input_params:
     label: Axis y
@@ -81,10 +81,10 @@ bar_orientation:
   input_params:
     label: Orientation
     choices:
-      Horizontal:
-      - hor
       Vertical:
       - ver
+      Horizontal:
+      - hor
 bar_graph_type:
   show: true
   show_if:
