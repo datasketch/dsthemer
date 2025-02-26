@@ -10,7 +10,7 @@ titles:
 colors:
   label: colors
   inputs:
-    - theme
+   # - theme
     - color_palette
 chart:
   label: chart

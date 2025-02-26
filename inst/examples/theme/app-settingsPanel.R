@@ -71,9 +71,9 @@ server <- function(input, output, session) {
 
   conf <- config_panel_server("config_panel", r)
 
-  observe({
-    print(conf$params())  # Imprimir valores actualizados
-  })
+  # observe({
+  #   print(conf$params())  # Imprimir valores actualizados
+  # })
 }
 
 

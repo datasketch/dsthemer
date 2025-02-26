@@ -6,7 +6,7 @@
 /* 🔹 Permite mover el panel desde la cabecera */
 [id*="-theme_view"] .panel-header {
   cursor: grab;
-  z-index: 11111 !important;
+  z-index: 11111;
 }
 
 .panel-header {
@@ -84,4 +84,10 @@
 
 .recalculating {
   opacity: 1 !important;
+}
+
+
+.selectize-control.single .selectize-input, .selectize-control.single .selectize-input input {
+  cursor: pointer;
+  z-index: auto;
 }

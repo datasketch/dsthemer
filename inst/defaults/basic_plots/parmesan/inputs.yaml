@@ -33,18 +33,18 @@ title_axis_y:
   input_params:
     label: Axis y
     value: " "
-theme:
-  show: true
-  description: Select the light or dark theme to customise the design of the chart.
-  input_type: radioButtons
-  input_params:
-    label: Theme
-    choices:
-      Light:
-      - light
-      Dark:
-      - dark
-    inline: true
+#theme:
+  # show: true
+  # description: Select the light or dark theme to customise the design of the chart.
+  # input_type: radioButtons
+  # input_params:
+  #   label: Theme
+  #   choices:
+  #     Light:
+  #     - light
+  #     Dark:
+  #     - dark
+  #   inline: true
 color_palette:
   show: true
   description: Click on the color circles to select the one you want. Once you've chosen the color, press 'Choose'. If you'd like to clear the selection, click on the trash can icon.

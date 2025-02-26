@@ -9,6 +9,7 @@ config_panel_ui <- function(id) {
     panel(
       title = "Graph configuration",
       id = ns("theme_view"),
+      color = "#b70f7f",
       width = 300,
       can_collapse = FALSE,
       body = div(
@@ -31,6 +32,15 @@ config_panel_server <- function(id, r) {
 
     observe({
       r$palette <- "categorical"
+      if (!is.null(r$has_map)) {
+        if (r$has_map) {
+          req(r$viz_plot)
+          r$palette <- "sequential"
+          r_parmesan$params$map_name <- gsub("map_", "", r$viz_plot)
+        }
+      }
+      r$agg_palette <- dsthemer_palette(r$org, palette = r$palette)
+      #updateColorPaletteInput(session = session, inputId = "color_palette", colors = r$agg_palette)
       for (section in names(parmesan)) {
         if (!is.null(parmesan[[section]]$inputs) && length(parmesan[[section]]$inputs) > 0) {
           for (input_def in parmesan[[section]]$inputs) {
@@ -52,21 +62,12 @@ config_panel_server <- function(id, r) {
                   param_update <- parmesan_updates[[input_def$input_type]]$update_param
                   fn_params <- list(input[[input_def$id]])
                   names(fn_params) <- param_update
-                  do.call(fn_update, c(list(session = session, inputId = input_def$id), fn_params))
+                  do.call(fn_update, c(list(session = session, inputId = ns(input_def$id)), fn_params))
                 }
                 r_parmesan$params[[input_def$id]] <- input[[input_def$id]]
               }
             }
           }
-        }
-      }
-
-
-      if (!is.null(r$has_map)) {
-        if (r$has_map) {
-          req(r$viz_plot)
-          r$palette <- "sequential"
-          r_parmesan$params$map_name <- gsub("map_", "", r$viz_plot)
         }
       }
     })
@@ -152,24 +153,11 @@ config_panel_server <- function(id, r) {
     })
 
 
-    observe({
-      req(r_parmesan$params$theme)
-      req(r$palette)
-      r$theme <- r_parmesan$params$theme
-      r$agg_palette <- dsthemer_palette(r$org, theme = r$theme, palette = r$palette)
-      updateColorPaletteInput(session = session, inputId = "color_palette", colors = r$agg_palette)
-    })
-
-
-    observe({
-      req(r$theme)
-      theme <- Filter(Negate(is.null), dsthemer::dsthemer(org = r$org, theme = r$theme))
-      r_parmesan$params$background_color <- dsthemer::dsthemer_background(r$org, r$theme)
-      r_parmesan$params <- modifyList(theme, r_parmesan$params)
-    })
-
     filtered_params <- reactive({
       req(r_parmesan$params)
+      theme <- Filter(Negate(is.null), dsthemer(org = r$org))
+      r_parmesan$params$background_color <- dsthemer_background(r$org)
+      r_parmesan$params <- modifyList(theme, r_parmesan$params)
       ls <- r_parmesan$params
       if ("theme" %in% names(ls)) {
         ls$theme <- NULL
