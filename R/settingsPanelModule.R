@@ -31,19 +31,28 @@ config_panel_server <- function(id, r) {
 
 
     observe({
-      r$palette <- "categorical"
+      r$discret_plot <- TRUE
+      r$continuos_plot <- FALSE
       if (!is.null(r$viz_plot)) {
-          r$has_axis <- r$viz_plot %in% c("bar", "line")
-          r$has_bar <- r$viz_plot %in% "bar"
-          r$has_line <- r$viz_plot %in% "line"
-          r$has_map <- grepl("map_", r$viz_plot)
-          if (r$has_map) {
-          r$palette <- "sequential"
+
+        r$has_axis <- r$viz_plot %in% c("bar", "line")
+        r$has_bar <- r$viz_plot %in% "bar"
+        r$has_line <- r$viz_plot %in% "line"
+        r$has_map <- grepl("map_", r$viz_plot)
+        r$discret_plot <- isTRUE(!r$has_map)
+
+        r$continuos_plot <- grepl("map_", r$viz_plot)
+
+        if (r$has_map) {
+          r$discret_plot <- FALSE
+          r$has_bar <- FALSE
+          r$has_line <- FALSE
           r_parmesan$params$map_name <- gsub("map_", "", r$viz_plot)
-          }
+        }
       }
-      r$agg_palette <- dsthemer_palette(r$org, palette = r$palette)
-      #updateColorPaletteInput(session = session, inputId = "color_palette", colors = r$agg_palette)
+      r$agg_palette_cat <- dsthemer_palette(r$org, palette = "categorical")
+      r$agg_palette_seq <- dsthemer_palette(r$org, palette = "sequential")
+
       for (section in names(parmesan)) {
         if (!is.null(parmesan[[section]]$inputs) && length(parmesan[[section]]$inputs) > 0) {
           for (input_def in parmesan[[section]]$inputs) {
@@ -167,14 +176,21 @@ config_panel_server <- function(id, r) {
       r_parmesan$params$background_color <- dsthemer_background(r$org)
       r_parmesan$params <- modifyList(theme, r_parmesan$params)
       ls <- r_parmesan$params
-      if ("theme" %in% names(ls)) {
-        ls$theme <- NULL
+
+      if (!is.null(r$discret_plot)) {
+        if (r$discret_plot) {
+          ls["color_palette_sequential"] <- NULL
+        } else {
+          ls["color_palette_categorical"] <- NULL
+        }
       }
-      if ("color_palette" %in% names(ls)) {
-        ls[[paste0("color_palette_", r$palette)]] <- ls$color_palette
-        ls$color_palette <- NULL
-      }
+
       ls <- Filter(Negate(is.null), ls)
+
+      if (!"map_tiles" %in% names(ls)) {
+        ls["map_provider_tile"] <- list(NULL)
+      }
+
       ls
     })
 

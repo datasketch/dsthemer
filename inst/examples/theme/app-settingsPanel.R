@@ -10,7 +10,7 @@ ui <- panelsPage(
   panel(
     title = "Data viz",
     id = "data-viz",
-    body = div(checkboxGroupInput("id_viz", "Select Viz", c("bar", "line", "treemap")),
+    body = div(checkboxGroupInput("id_viz", "Select Viz", c("bar", "line", "map_world_countries")),
                filterVizUI("filterModule"),
                selectVizUI("selectModule")
     )
@@ -40,7 +40,7 @@ server <- function(input, output, session) {
     not_map = TRUE
   )
 
-  availableIcons <- c("bar", "pie", "line", "treemap")
+  availableIcons <- c("bar", "pie", "line", "map_world_countries")
 
   filteredIcons <- filterVizServer("filterModule", availableIcons, reactive(input$id_viz))
 
@@ -51,7 +51,7 @@ server <- function(input, output, session) {
   )
 
   observe({
-    r$viz_plot <- selectedViz$activeIcon()
+    r$viz_plot <- selectedViz$activeIcon() %||% input$id_viz[1]
     if (is.null(selectedViz$activeIcon())) {
       hide("open_config")  # Ocultar si no hay icono activo
     } else {

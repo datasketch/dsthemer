@@ -45,13 +45,24 @@ title_axis_y:
   #     Dark:
   #     - dark
   #   inline: true
-color_palette:
+color_palette_categorical:
   show: true
+  show_if:
+    discret_plot()
   description: Click on the color circles to select the one you want. Once you've chosen the color, press 'Choose'. If you'd like to clear the selection, click on the trash can icon.
   input_type: colorPaletteInput
   input_params:
     label: Change or add colors
-    colors: agg_palette()
+    colors: agg_palette_cat()
+color_palette_sequential:
+  show: true
+  show_if:
+    continuos_plot()
+  description: Click on the color circles to select the one you want. Once you've chosen the color, press 'Choose'. If you'd like to clear the selection, click on the trash can icon.
+  input_type: colorPaletteInput
+  input_params:
+    label: Change or add colors
+    colors: agg_palette_seq()
 agg:
   show: true
   show_if:
@@ -97,5 +108,31 @@ bar_graph_type:
       - stacked
       Grouped:
       - grouped
-
+map_tiles:
+  show: true
+  show_if:
+    has_map()
+  input_type: selectizeInput
+  input_params:
+    label: Map tile
+    choices:
+      Stadia Alidade Smooth:
+      - Stadia.AlidadeSmooth
+      Stadia Alidade Smooth Dark:
+      - Stadia.AlidadeSmoothDark
+      Stamen Toner (Dark style):
+      - Stadia.StamenToner
+      Stadia Outdoors:
+      - Stadia.Outdoors
+      OpenStreetMap Mapnik:
+      - OpenStreetMap.Mapnik
+      CartoDB Voyager Labels Under:
+      - CartoDB.VoyagerLabelsUnder
+      CartoDB Voyager Only Labels:
+      - CartoDB.VoyagerOnlyLabels
+    selected:
+    multiple: true
+    options:
+      maxItems:
+        - 1
 

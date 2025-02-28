@@ -11,7 +11,8 @@ colors:
   label: colors
   inputs:
    # - theme
-    - color_palette
+    - color_palette_categorical
+    - color_palette_sequential
 chart:
   label: chart
   inputs:
@@ -19,3 +20,6 @@ chart:
     - percentage
     - bar_orientation
     - bar_graph_type
+    - map_tiles
+
+
