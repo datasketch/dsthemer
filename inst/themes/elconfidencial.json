@@ -13,7 +13,7 @@
   "caption_link": null,
   "caption_margin": null,
   "caption_size": 15,
-  "caption_weight": null,
+  "caption_weight": 500,
   "color_palette_type": null,
   "datalabel_format_sample": null,
   //"datalabel_formmater_js": null,
