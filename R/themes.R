@@ -52,7 +52,8 @@ dsthemer_logo <- function(org, theme) {
 
 
 load_dsthemer_json <- function(org) {
-  org <- org %||% "datasketch"
+  org <- org %||% "general"
+  if (!org %in% org_dsthemer_list()) org <- "general"
   themes_path <- system.file("themes", package = "dsthemer")
   all_orgs <- file_path_sans_ext(list.files(themes_path))
   if(!org %in% all_orgs)
