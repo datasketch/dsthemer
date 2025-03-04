@@ -30,9 +30,44 @@ config_panel_server <- function(id, r) {
     r_parmesan <- reactiveValues()
 
 
+    palette_colors <- reactive({
+      org <- r$org
+      list(
+        categorical = dsthemer_palette(org,  palette = "categorical") |> unlist(),
+        sequential = dsthemer_palette(org,  palette = "sequential") |> unlist(),
+        divergening = dsthemer_palette(org,  palette = "divergening") |> unlist()
+      )
+    })
+
+    colors_list <- reactive({
+      req(palette_colors())
+      palette_colors <- palette_colors()
+      lc <- purrr::map(names(palette_colors), function(palette) {
+        colors <- palette_colors[[palette]]
+        as.character(div(purrr::map(colors, function(color) {
+          div(style = paste0("width: 20px; height: 20px; display: inline-block; background-color:",
+                             color, ";"))
+        })))
+      })
+      names(lc) <- names(palette_colors)
+      lc
+    })
+
+    observeEvent(input$color_palette_type, {
+      r$agg_palette <- dsthemer_palette(r$org, palette = input$color_palette_type)
+      updateRadioButtonsInput(session = session, inputId = "color_palette_type", choices = NULL, selected = input$color_palette_type)
+
+    }, ignoreInit = FALSE, ignoreNULL = TRUE)
+
     observe({
+      r$color_opts <- colors_list()
       r$discret_plot <- TRUE
       r$continuos_plot <- FALSE
+
+       if (!is.null(r$agg_palette)) {
+         updateColorPaletteInput(session = session, inputId = "color_palette", colors = r$agg_palette)
+       }
+
       if (!is.null(r$viz_plot)) {
 
         r$has_axis <- r$viz_plot %in% c("bar", "line")
@@ -50,8 +85,7 @@ config_panel_server <- function(id, r) {
           r_parmesan$params$map_name <- gsub("map_", "", r$viz_plot)
         }
       }
-      r$agg_palette_cat <- dsthemer_palette(r$org, palette = "categorical")
-      r$agg_palette_seq <- dsthemer_palette(r$org, palette = "sequential")
+
 
       for (section in names(parmesan)) {
         if (!is.null(parmesan[[section]]$inputs) && length(parmesan[[section]]$inputs) > 0) {
@@ -69,13 +103,13 @@ config_panel_server <- function(id, r) {
               }
               # actualiza los inputs update... segun el widget
               if (!is.null(input[[input_def$id]])) {
-                if (!any(grepl("\\(\\)$", input[[input_def$id]]))) {
-                  fn_update <- paste0("update", gsub("(^|[[:space:]])([[:alpha:]])", "\\1\\U\\2", input_def$input_type, perl=TRUE))
-                  param_update <- parmesan_updates[[input_def$input_type]]$update_param
-                  fn_params <- list(input[[input_def$id]])
-                  names(fn_params) <- param_update
-                  do.call(fn_update, c(list(session = session, inputId = ns(input_def$id)), fn_params))
-                }
+                # if (!any(grepl("\\(\\)$", input[[input_def$id]]))) {
+                #   fn_update <- paste0("update", gsub("(^|[[:space:]])([[:alpha:]])", "\\1\\U\\2", input_def$input_type, perl=TRUE))
+                #   param_update <- parmesan_updates[[input_def$input_type]]$update_param
+                #   fn_params <- list(input[[input_def$id]])
+                #   names(fn_params) <- param_update
+                #   do.call(fn_update, c(list(session = session, inputId = ns(input_def$id)), fn_params))
+                # }
                 r_parmesan$params[[input_def$id]] <- input[[input_def$id]]
               }
             }
@@ -128,8 +162,8 @@ config_panel_server <- function(id, r) {
                 }
 
                 if (!is.null(r_parmesan$params[[input_def$id]])) {
-                  param_update <- parmesan_updates[[input_def$input_type]]$update_param
-                  input_params[[param_update]] <- r_parmesan$params[[input_def$id]]
+                    param_update <- parmesan_updates[[input_def$input_type]]$update_param
+                    input_params[[param_update]] <- r_parmesan$params[[input_def$id]]
                 }
               }
             }
@@ -176,13 +210,10 @@ config_panel_server <- function(id, r) {
       r_parmesan$params$background_color <- dsthemer_background(r$org)
       r_parmesan$params <- modifyList(theme, r_parmesan$params)
       ls <- r_parmesan$params
+      ls[[paste0("color_palette_", ls[["color_palette_type"]])]] <- ls$color_palette
 
-      if (!is.null(r$discret_plot)) {
-        if (r$discret_plot) {
-          ls["color_palette_sequential"] <- NULL
-        } else {
-          ls["color_palette_categorical"] <- NULL
-        }
+      if ("color_palette" %in% names(ls)) {
+        ls[["color_palette"]] <- NULL
       }
 
       ls <- Filter(Negate(is.null), ls)

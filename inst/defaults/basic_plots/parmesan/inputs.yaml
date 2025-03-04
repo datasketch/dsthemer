@@ -45,24 +45,19 @@ title_axis_y:
   #     Dark:
   #     - dark
   #   inline: true
-color_palette_categorical:
+color_palette_type:
   show: true
-  show_if:
-    discret_plot()
+  input_type: radioButtonsInput
+  input_params:
+    label: ' '
+    choices: color_opts()
+color_palette:
+  show: true
   description: Click on the color circles to select the one you want. Once you've chosen the color, press 'Choose'. If you'd like to clear the selection, click on the trash can icon.
   input_type: colorPaletteInput
   input_params:
     label: Change or add colors
-    colors: agg_palette_cat()
-color_palette_sequential:
-  show: true
-  show_if:
-    continuos_plot()
-  description: Click on the color circles to select the one you want. Once you've chosen the color, press 'Choose'. If you'd like to clear the selection, click on the trash can icon.
-  input_type: colorPaletteInput
-  input_params:
-    label: Change or add colors
-    colors: agg_palette_seq()
+    colors: agg_palette()
 agg:
   show: true
   show_if:

@@ -10,9 +10,8 @@ titles:
 colors:
   label: colors
   inputs:
-   # - theme
-    - color_palette_categorical
-    - color_palette_sequential
+    - color_palette_type
+    - color_palette
 chart:
   label: chart
   inputs:
