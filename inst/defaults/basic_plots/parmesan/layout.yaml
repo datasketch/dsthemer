@@ -17,6 +17,7 @@ chart:
   inputs:
     - agg
     - percentage
+    - sort
     - bar_orientation
     - bar_graph_type
     - map_tiles

@@ -79,6 +79,20 @@ percentage:
   input_type: checkboxInput
   input_params:
     label: Percentage
+sort:
+  show: true
+  show_if:
+    has_bar()
+  input_type: selectizeInput
+  input_params:
+    label: Sort
+    choices:
+      No:
+      - 'no'
+      Downward:
+      - desc
+      Upward:
+      - asc
 bar_orientation:
   show: true
   show_if:
