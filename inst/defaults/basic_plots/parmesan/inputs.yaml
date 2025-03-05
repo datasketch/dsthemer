@@ -87,12 +87,19 @@ sort:
   input_params:
     label: Sort
     choices:
-      No:
-      - 'no'
       Downward:
       - desc
       Upward:
       - asc
+      No:
+      - 'no'
+slice_n:
+  show: true
+  description: You can select a specific number of categories to display. Using this command, you can choose, for example, the first 10 categories or the last 5.
+  input_type: numberInput
+  input_params:
+    label: Slice
+    value:
 bar_orientation:
   show: true
   show_if:

@@ -18,6 +18,7 @@ chart:
     - agg
     - percentage
     - sort
+    - slice_n
     - bar_orientation
     - bar_graph_type
     - map_tiles
