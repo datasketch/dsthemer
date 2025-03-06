@@ -10,7 +10,7 @@
 }
 
 .panel-header {
-  z-index: auto !important;
+  z-index: 1 !important;
 }
 
 /* Esquina de redimensionamiento (botón pequeño en la esquina) */
