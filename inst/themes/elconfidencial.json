@@ -101,7 +101,7 @@
   "tooltip_width": null,
   "map_tiles": null,
   "map_bring_front": true,
-  "map_zoom_control_align": "topleft",
+  "map_zoom_control_align": "topright",
   "light": {
     "axis_ticks_color": null,
     "axis_line_x_color": null,
