@@ -55,6 +55,7 @@ config_panel_server <- function(id, r) {
 
     observeEvent(input$color_palette_type, {
       r$agg_palette <- dsthemer_palette(r$org, palette = isolate(input$color_palette_type))
+      freezeReactiveValue(input, "color_palette_type")
       updateRadioButtonsInput(session = session, inputId = "color_palette_type", choices = NULL, selected = input$color_palette_type)
     }, ignoreInit = FALSE, ignoreNULL = TRUE)
 
