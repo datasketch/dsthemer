@@ -95,3 +95,7 @@
 .selectize-input {
    z-index: auto !important;
 }
+
+#selector_var {
+  margin-top: -5% !important;
+}
