@@ -17,6 +17,7 @@ chart:
   inputs:
     - agg
     - percentage
+    - datalabel_show
     - sort
     - slice_n
     - bar_orientation

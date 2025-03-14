@@ -79,6 +79,11 @@ percentage:
   input_type: checkboxInput
   input_params:
     label: Percentage
+datalabel_show:
+  show: true
+  input_type: checkboxInput
+  input_params:
+    label: Data label
 sort:
   show: true
   show_if:
