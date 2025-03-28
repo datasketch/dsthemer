@@ -7,7 +7,7 @@ config_panel_ui <- function(id) {
       includeCSS(dsthemer_sys_file("lib/panelControl/panelControl.css"))
     ),
     panel(
-      title = "Graph configuration",
+      title = "graph_conf",
       id = ns("theme_view"),
       color = "#b70f7f",
       width = 300,
