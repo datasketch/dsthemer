@@ -3,19 +3,19 @@ title:
   show: true
   input_type: passiveTextInput
   input_params:
-    label: Title
+    label: title
     value: " "
 subtitle:
   show: true
   input_type: passiveTextInput
   input_params:
-    label: Subtitle
+    label: subtitle
     value: " "
 caption:
   show: true
   input_type: passiveTextInput
   input_params:
-    label: Caption
+    label: caption
     value: " "
 title_axis_x:
   show: true
@@ -23,7 +23,7 @@ title_axis_x:
     has_axis()
   input_type: passiveTextInput
   input_params:
-    label: Axis x
+    label: axis_x
     value: " "
 title_axis_y:
   show: true
@@ -31,7 +31,7 @@ title_axis_y:
     has_axis()
   input_type: passiveTextInput
   input_params:
-    label: Axis y
+    label: axis_y
     value: " "
 #theme:
   # show: true
@@ -53,10 +53,10 @@ color_palette_type:
     choices: color_opts()
 color_palette:
   show: true
-  description: Click on the color circles to select the one you want. Once you've chosen the color, press 'Choose'. If you'd like to clear the selection, click on the trash can icon.
+  description: click_color
   input_type: colorPaletteInput
   input_params:
-    label: Change or add colors
+    label: change_colors
     colors: agg_palette()
 agg:
   show: true
@@ -64,26 +64,26 @@ agg:
     has_data_num()
   input_type: selectizeInput
   input_params:
-    label: Aggregation
+    label: aggregation
     choices:
-      Total:
+      sum:
       - sum
-      Mean:
+      mean:
       - mean
-      Max:
+      max:
       - max
-      Min:
+      min:
       - min
 percentage:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Percentage
+    label: pct
 datalabel_show:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Data label
+    label: data_label
 sort:
   show: true
   show_if:
@@ -92,18 +92,18 @@ sort:
   input_params:
     label: Sort
     choices:
-      Downward:
+      down:
       - desc
-      Upward:
+      up:
       - asc
-      No:
-      - 'no'
+      no_lab:
+      - no
 slice_n:
   show: true
-  description: You can select a specific number of categories to display. Using this command, you can choose, for example, the first 10 categories or the last 5.
+  description: slice_info
   input_type: numberInput
   input_params:
-    label: Slice
+    label: slice
     value:
 bar_orientation:
   show: true
@@ -111,11 +111,11 @@ bar_orientation:
     has_bar()
   input_type: selectizeInput
   input_params:
-    label: Orientation
+    label: orientation
     choices:
-      Vertical:
+      vertical:
       - ver
-      Horizontal:
+      horizontal:
       - hor
 bar_graph_type:
   show: true
@@ -123,11 +123,11 @@ bar_graph_type:
     has_bar()
   input_type: selectizeInput
   input_params:
-    label: Bar type
+    label: bar_type
     choices:
-      Stacked:
+      stacked:
       - stacked
-      Grouped:
+      grouped:
       - grouped
 map_tiles:
   show: true
@@ -135,7 +135,7 @@ map_tiles:
     has_map()
   input_type: selectizeInput
   input_params:
-    label: Map tile
+    label: map_tile
     choices:
       Stadia Alidade Smooth:
       - Stadia.AlidadeSmooth

@@ -1,6 +1,6 @@
 titles:
   label: titles
-  description: Type your text in the field and press Enter.
+  description: title_info
   inputs:
     - title
     - subtitle

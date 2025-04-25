@@ -146,7 +146,7 @@ config_panel_server <- function(id, r) {
             paste0(
               "<div class='tooltip-theme'>
             <i class='fa fa-info-circle'></i>
-            <span class='tooltiptext'>", section_data$description, "</span>
+            <span class='tooltiptext'>", i_(section_data$description,  lang = r$lang(), i18n = r$i18n), "</span>
           </div>"
             )
           } else {
@@ -156,7 +156,7 @@ config_panel_server <- function(id, r) {
           # Agregar el label y el tooltip al contenedor principal de la sección
           input_list <- append(input_list, list(HTML(
             paste0("<div class='section-parmesan' id='", section, "' style='display: flex; align-items: center; gap: 10px;'>",
-                   section_data$label, tooltip_icon, "</div>")
+                   i_(section_data$label, lang = r$lang(), i18n = r$i18n), tooltip_icon, "</div>")
           )))
 
           # Procesar cada input y agregar el tooltip al widget
@@ -166,7 +166,8 @@ config_panel_server <- function(id, r) {
             if (!is.null(input_params)) {
               # Reemplazar valores específicos de los parámetros si es necesario
               for (param in names(input_params)) {
-                param_value <- input_params[[param]]
+
+                param_value <- i_(input_params[[param]], lang = r$lang(), i18n = r$i18n)
                 if (!is.null(param_value) && is.character(param_value) && length(param_value) == 1 && grepl("\\(\\)$", param_value)) {
                   param_name <- gsub("\\(\\)$", "", param_value)
                   if (!is.null(r[[param_name]])) {
@@ -187,17 +188,22 @@ config_panel_server <- function(id, r) {
               paste0(
                 "<span class='tooltip-theme'>
               <i class='fa fa-info-circle'></i>
-              <span class='tooltiptext'>", input_def$description, "</span>
+              <span class='tooltiptext'>", i_(input_def$description,  lang = r$lang(), i18n = r$i18n), "</span>
             </span>"
               )
             } else {
               ""
             }
-            input_params$label <- HTML(paste(input_params$label, widget_tooltip))
+            input_params$label <- HTML(paste(i_(input_params$label, lang = r$lang(), i18n = r$i18n), widget_tooltip))
             show_widget <- TRUE
             if (!is.null(input_def$show_if)) {
               param_condition <- gsub("\\(\\)$", "", input_def$show_if)
               show_widget <- r[[param_condition]] %||% TRUE
+            }
+
+
+            if ("choices" %in% names(input_params)) {
+              names(input_params$choices) <- i_(names(input_params$choices),  lang = r$lang(), i18n = r$i18n)
             }
 
             if (show_widget) {

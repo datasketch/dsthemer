@@ -1,12 +1,15 @@
+library(dsthemer)
 library(shiny)
 library(shinypanels)
 library(dsmods)
 library(parmesan)
 library(shinyinvoer)
 library(shinyjs)
+library(shi18ny)
 
 ui <- panelsPage(
   useShinyjs(),
+  useShi18ny(),
   panel(
     title = "Data viz",
     id = "data-viz",
@@ -29,25 +32,38 @@ ui <- panelsPage(
 )
 
 server <- function(input, output, session) {
+
+  opts <- list(
+    defaultLang = "en",
+    availableLangs = c("es","en"),
+    customTranslationSource = "csv"
+  )
+
+  i18n <- i18nLoad(opts)
+  lang <- callModule(langSelector,"lang", i18n = opts, showSelector = F)
+
   r <- reactiveValues(
     data = NULL,
     caption = "Créditos",
     label_theme = "dark",
     var_cat_colors = NULL,
     default_var_color = NULL,
-    idButton = "open_config",
+    #idButton = "open_config",
     has_map = FALSE,
-    not_map = TRUE
+    not_map = TRUE,
+    lang = lang,
+    i18n = i18n
   )
 
   availableIcons <- c("bar", "pie", "line", "map_world_countries")
 
-  filteredIcons <- filterVizServer("filterModule", availableIcons, reactive(input$id_viz))
+  filteredIcons <- filterVizServer("filterModule", availableIcons, reactive(input$id_viz), r)
 
   selectedViz <- selectVizServer(
     id = "selectModule",
     iconsToShow = filteredIcons$filteredIcons,
-    lastClick = reactive(input$`selectModule-selectedVizInput`)
+    lastClick = reactive(input$`selectModule-selectedVizInput`),
+    r
   )
 
   observe({

@@ -1,0 +1,106 @@
+id,en,es
+blank,Blank,Blank
+library,Library,Library
+sample,Sample,Sample
+upload,Upload,Upload
+url,Url,Url
+empty_table,Empty editable table,Empty editable table
+ds_library,Databases stored in the DS library,Databases stored in the DS library
+sample_data,Sample data,Sample data
+upload,Upload data from the computer,Upload data from the computer
+load_url,Load a database hosted on a public URL,Load a database hosted on a public URL
+type_data,Type or paste your data,Type or paste your data
+process_data,Process Data,Process Data
+upload_file,Upload a file,Upload a file
+drop_file,Drop file here,Drop file here
+select_file,Select file,Select file
+load_data,Load data,Load data
+url_eg,https://example.com/data.csv,https://example.com/data.csv
+please_credentials,Please provide valid credentials for the DS library.,Please provide valid credentials for the DS library.
+ds_data,Data from DS library,Data from DS library
+enter_url,Enter the URL:,Enter the URL:
+msg_data,You must enter data in the table before processing.,You must enter data in the table before processing.
+go_back,Go back,Go back
+error_data,Error processing the data. Check the table.,Error processing the data. Check the table.
+error_url,Error loading URL. Please check the link.,Error loading URL. Please check the link.
+error_read,Error reading the file. Check the format.,Error reading the file. Check the format.
+load_db,Load dabases from,Load dabases from
+table,Select a table:,Select a table:
+go,Go,Go
+msg_non_empty,Both 'inputId' and 'choices' must be provided and non-empty.,Both 'inputId' and 'choices' must be provided and non-empty.
+bar_negative_stack,Bar negative stack,Bar negative stack
+bar,Bar,Bar
+bubbles,Bubbles,Bubbles
+donut,Donut,Donut
+dumbbell,Dumbbell,Dumbbell
+item,Item,Item
+line,Line,Line
+map_col_departments,Colombia departments,Colombia departments
+map_spain,Spain,Spain
+map_world_countries_europe,Europe countries,Europe countries
+map_world_countries_european_union,European union countries,European union countries
+map_world_countries_latin_america,Latin America,Latin America
+map_world_countries,World countries,World countries
+network,Network,Network
+parallel_coordinates,Parallel coordinates,Parallel coordinates
+pie,Pie,Pie
+radial_bar,Radial bar,Radial bar
+sankey,Sankey,Sankey
+scatter,Scatter,Scatter
+solidgauge,Solidgauge,Solidgauge
+sunburst,Sunburst,Sunburst
+treemap,Treemap,Treemap
+word_cloud,Word cloud,Word cloud
+recommend_charts,Recommend visualizations,Recommend visualizations
+available_viz,Available visualizations,Available visualizations
+graph_conf,Graph configuration,Graph configuration
+titles,Titles,Titles
+colors,Colors,Colors
+chart,Chart,Chart
+title,Title,Title
+subtitle,Subtitle,Subtitle
+caption,Caption,Caption
+axis_x,Axis x,Axis x
+axis_y,Axis y,Axis y
+add_colors,Change or add colors,Change or add colors
+color_info,"Click on the color circles to select the one you want. Once you've chosen the color, press 'Choose'. If you'd like to clear the selection, click on the trash can icon.","Click on the color circles to select the one you want. Once you've chosen the color, press 'Choose'. If you'd like to clear the selection, click on the trash can icon."
+agg,Aggregation,Aggregation
+pct,Percentage,Percentage
+data_label,Data label,Data label
+sort,Sort,Sort
+down,Downward,Downward
+up,Upward,Upward
+slice,Slice,Slice
+slice_info,"You can select a specific number of categories to display. Using this command, you can choose, for example, the first 10 categories or the last 5.","You can select a specific number of categories to display. Using this command, you can choose, for example, the first 10 categories or the last 5."
+orientation,Orientation,Orientation
+bar_type,Bar type,Bar type
+stacked,Stacked,Stacked
+grouped,Grouped,Grouped
+map_tile,Map tile,Map tile
+title,Title,Title
+subtitle,Subtitle,Subtitle
+caption,Caption,Caption
+axis_x,Axis x,Axis x
+axis_y,Axis y,Axis y
+change_colors,Change or add colors,Change or add colors
+aggregation,Aggregation,Aggregation
+sum,Total,Total
+mean,Mean,Mean
+max,Max,Max
+min,Min,Min
+percentage,Percentage,Percentage
+data_label,Data label,Data label
+desc,Downward,Downward
+asc,Upward,Upward
+no_lab,Unsorted,Unsorted
+slice,Slice,Slice
+orientation,Orientation,Orientation
+vertical,Vertical,Vertical
+horizontal,Horizontal,Horizontal
+bar_type,Bar type,Bar type
+stacked,Stacked,Stacked
+grouped,Grouped,Grouped
+map_tile,Map tile,Map tile
+click_color,"Click on the color circles to select the one you want. Once you've chosen the color, press 'Choose'. If you'd like to clear the selection, click on the trash can icon.","Click on the color circles to select the one you want. Once you've chosen the color, press 'Choose'. If you'd like to clear the selection, click on the trash can icon."
+slice_info,"You can select a specific number of categories to display. Using this command, you can choose, for example, the first 10 categories or the last 5.","You can select a specific number of categories to display. Using this command, you can choose, for example, the first 10 categories or the last 5."
+title_info,Type your text in the field and press Enter.,Type your text in the field and press Enter.
