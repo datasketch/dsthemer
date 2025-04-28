@@ -104,3 +104,4 @@ map_tile,Map tile,Map tile
 click_color,"Click on the color circles to select the one you want. Once you've chosen the color, press 'Choose'. If you'd like to clear the selection, click on the trash can icon.","Click on the color circles to select the one you want. Once you've chosen the color, press 'Choose'. If you'd like to clear the selection, click on the trash can icon."
 slice_info,"You can select a specific number of categories to display. Using this command, you can choose, for example, the first 10 categories or the last 5.","You can select a specific number of categories to display. Using this command, you can choose, for example, the first 10 categories or the last 5."
 title_info,Type your text in the field and press Enter.,Type your text in the field and press Enter.
+graph_conf,Edit Panel,Panel de Edición

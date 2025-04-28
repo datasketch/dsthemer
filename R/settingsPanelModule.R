@@ -7,7 +7,7 @@ config_panel_ui <- function(id) {
       includeCSS(dsthemer_sys_file("lib/panelControl/panelControl.css"))
     ),
     panel(
-      title = "graph_conf",
+      title = uiOutput(ns("title_panel")),
       id = ns("theme_view"),
       color = "#b70f7f",
       width = 300,
@@ -24,11 +24,15 @@ config_panel_ui <- function(id) {
 config_panel_server <- function(id, r) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
+
+    output$title_panel <- renderUI({
+      i_("graph_conf", lang = r$lang(), i18n = r$i18n)
+    })
+
     path <- dsthemer_sys_file("defaults/basic_plots/parmesan")
     parmesan <- parmesan_load(path)  # Cargar configuración YAML
     parmesan_updates <- yaml::read_yaml(dsthemer_sys_file("defaults/basic_plots/update_inputs.yaml"))$shiny
     r_parmesan <- reactiveValues()
-
 
     palette_colors <- reactive({
       org <- r$org

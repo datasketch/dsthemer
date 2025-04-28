@@ -99,3 +99,15 @@
 #selector_var {
   margin-top: -5% !important;
 }
+
+#config_panel-title_panel {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+#config_panel-theme_view_head {
+justify-content: flex-start !important;
+}
