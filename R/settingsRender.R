@@ -234,11 +234,11 @@ settings_render <- function(id, r) {
         ls[["color_palette"]] <- NULL
       }
 
-      ls <- Filter(Negate(is.null), ls)
-
       if (!"map_tiles" %in% names(ls)) {
         ls["map_provider_tile"] <- list(NULL)
       }
+
+      ls <- Filter(Negate(is.null), ls)
 
       r$params <- ls
     })
