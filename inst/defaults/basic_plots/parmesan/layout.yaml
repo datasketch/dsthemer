@@ -23,5 +23,7 @@ chart:
     - bar_orientation
     - bar_graph_type
     - map_tiles
+    - sankey_node_opacity
+    - sankey_link_opacity
 
 

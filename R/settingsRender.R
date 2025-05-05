@@ -75,7 +75,8 @@ settings_render <- function(id, r) {
       }
 
       if (!is.null(r$viz_plot)) {
-
+        r$has_sankey <- r$viz_plot %in% "sankey"
+        r$has_num <- r$viz_plot != "sankey"
         r$has_axis <- r$viz_plot %in% c("bar", "line")
         r$has_bar <- r$viz_plot %in% "bar"
         r$has_line <- r$viz_plot %in% "line"
