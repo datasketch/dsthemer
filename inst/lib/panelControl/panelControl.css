@@ -1,28 +1,22 @@
 /* 🔹 Mantiene los estilos preexistentes del panel */
 [id*="-theme_view"] {
  resize: none;
+ width: 320px;
 }
 
-/* 🔹 Permite mover el panel desde la cabecera */
-[id*="-theme_view"] .panel-header {
-  cursor: grab;
+html, body {
+  height: auto;
+}
+
+.panel-content {
+  height: 85vh !important;
+  overflow: auto;
 }
 
 .panel-header {
   z-index: 1 !important;
 }
 
-/* Esquina de redimensionamiento (botón pequeño en la esquina) */
-.resize-handle {
-  width: 10px;
-  height: 10px;
-  background: #ccc;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  cursor: nwse-resize;
-  border-radius: 2px;
-}
 
 .section-parmesan {
   border-bottom: 1px solid #ccc;
@@ -100,14 +94,4 @@
   margin-top: -5% !important;
 }
 
-#config_panel-title_panel {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.055em;
-  text-transform: uppercase;
-}
 
-#config_panel-theme_view_head {
-justify-content: flex-start !important;
-}

@@ -43,12 +43,12 @@ server <- function(input, output, session) {
   lang <- callModule(langSelector,"lang", i18n = opts, showSelector = F)
 
   r <- reactiveValues(
-    data = NULL,
+    data = 1,
     caption = "Créditos",
     label_theme = "dark",
     var_cat_colors = NULL,
     default_var_color = NULL,
-    #idButton = "open_config",
+    idButton = "open_config",
     has_map = FALSE,
     not_map = TRUE,
     lang = lang,

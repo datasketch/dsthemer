@@ -3,19 +3,10 @@ config_panel_ui <- function(id) {
   ns <- NS(id)
   tagList(
     tags$head(
-      includeScript(dsthemer_sys_file("lib/panelControl/panelControl.js")),
+      #includeScript(dsthemer_sys_file("lib/panelControl/panelControl.js")),
       includeCSS(dsthemer_sys_file("lib/panelControl/panelControl.css"))
     ),
-    panel(
-      title = uiOutput(ns("title_panel")),
-      id = ns("theme_view"),
-      color = "#b70f7f",
-      width = 300,
-      can_collapse = FALSE,
-      body = div(
-        uiOutput(ns("dynamic_inputs"))
-      )
-    )
+    uiOutput(ns("panel_container"))
   )
 }
 
@@ -25,8 +16,23 @@ config_panel_server <- function(id, r) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
-    output$title_panel <- renderUI({
-      i_("graph_conf", lang = r$lang(), i18n = r$i18n)
+    # output$title_panel <- renderUI({
+    #   req(r$viz_plot)  # Asegurarse de que r$viz_plot no sea NULL
+    #   i_("graph_conf", lang = r$lang(), i18n = r$i18n)
+    # })
+
+    output$panel_container <- renderUI({
+      req(r$data)
+      req(r$viz_plot)  # Asegurarse de que r$viz_plot no sea NULL
+      panel(
+        title =  i_("graph_conf", lang = r$lang(), i18n = r$i18n),#uiOutput(ns("title_panel")),
+        id = ns("theme_view"),
+        color = "#b70f7f",
+        can_collapse = FALSE,
+        body = div(
+          uiOutput(ns("dynamic_inputs"))
+        )
+      )
     })
 
     path <- dsthemer_sys_file("defaults/basic_plots/parmesan")
@@ -35,6 +41,7 @@ config_panel_server <- function(id, r) {
     r_parmesan <- reactiveValues()
 
     palette_colors <- reactive({
+      req(r$viz_plot)  # Asegurarse de que r$viz_plot no sea NULL
       org <- r$org
       list(
         categorical = dsthemer_palette(org,  palette = "categorical") |> unlist(),
@@ -44,6 +51,7 @@ config_panel_server <- function(id, r) {
     })
 
     colors_list <- reactive({
+      req(r$viz_plot)  # Asegurarse de que r$viz_plot no sea NULL
       req(palette_colors())
       palette_colors <- palette_colors()
       lc <- purrr::map(names(palette_colors), function(palette) {
@@ -58,6 +66,7 @@ config_panel_server <- function(id, r) {
     })
 
     observeEvent(input$color_palette_type, {
+      req(r$viz_plot)  # Asegurarse de que r$viz_plot no sea NULL
       req(input$color_palette_type)
       input_debounced <- input$color_palette_type
 
@@ -66,6 +75,7 @@ config_panel_server <- function(id, r) {
     }, ignoreInit = FALSE, ignoreNULL = TRUE)
 
     observe({
+      req(r$viz_plot)  # Asegurarse de que r$viz_plot no sea NULL
       r$color_opts <- colors_list()
       r$discret_plot <- TRUE
       r$continuos_plot <- FALSE
@@ -129,6 +139,7 @@ config_panel_server <- function(id, r) {
     })
 
     observeEvent(input$color_palette, {
+      req(r$viz_plot)  # Asegurarse de que r$viz_plot no sea NULL
       if (!identical(input$color_palette, "agg_palette()")) {
         colors <- lapply(input$color_palette, function(x) list(x))
         if (!identical(r$agg_palette, colors)) {
@@ -139,6 +150,7 @@ config_panel_server <- function(id, r) {
 
     # Renderizar los inputs dinámicamente
     output$dynamic_inputs <- renderUI({
+      req(r$viz_plot)  # Asegurarse de que r$viz_plot no sea NULL
       input_list <- list()
 
       for (section in names(parmesan)) {
@@ -231,6 +243,7 @@ config_panel_server <- function(id, r) {
 
 
     filtered_params <- reactive({
+      req(r$viz_plot)  # Asegurarse de que r$viz_plot no sea NULL
       req(r_parmesan$params)
       theme <- Filter(Negate(is.null), dsthemer(org = r$org))
       r_parmesan$params$background_color <- dsthemer_background(r$org)
