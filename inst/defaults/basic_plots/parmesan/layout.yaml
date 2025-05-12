@@ -25,5 +25,6 @@ chart:
     - map_tiles
     - sankey_node_opacity
     - sankey_link_opacity
+    - stopwords_language
 
 

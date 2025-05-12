@@ -180,3 +180,17 @@ sankey_link_opacity:
     min: 0
     max: 1
     value: 0.7
+stopwords_language:
+  show: true
+  show_if:
+    has_wordcloud()
+  input_type: selectizeInput
+  input_params:
+    label: stopwords_language
+    choices:
+      English: en
+      Spanish: es
+    selected:
+    multiple: true
+    options:
+      maxItems: 1
