@@ -110,7 +110,7 @@
     "border_color": "#B0B0B0 ",
     "caption_color": "#202020",
     "tooltip_text_color": null,
-    "background_color": "transparent",
+    "background_color": "#ffffff00",
     "datalabel_color": "#202020",
     "grid_color": "#B0B0B0",
     "grid_x_color": null,
