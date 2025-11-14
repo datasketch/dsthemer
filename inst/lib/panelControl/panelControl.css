@@ -1,22 +1,3 @@
-/* 🔹 Mantiene los estilos preexistentes del panel */
-[id*="-theme_view"] {
- resize: none;
- width: 320px;
-}
-
-html, body {
-  height: auto;
-}
-
-.panel-content {
-  height: 85vh !important;
-  overflow: auto;
-}
-
-.panel-header {
-  z-index: 1 !important;
-}
-
 
 .section-parmesan {
   border-bottom: 1px solid #ccc;
@@ -59,39 +40,4 @@ html, body {
   visibility: visible;
   opacity: 1;
 }
-
-.shiny-options-group {
-  display: flex;
-  gap: 20px;
-}
-
-.control-label {
-  font-size: 15px;
-  margin-top: 2%;
-}
-
-.hidden-panel {
- display: none !important;
-}
-
-
-.recalculating {
-  opacity: 1 !important;
-}
-
-
-.selectize-control.single .selectize-input, .selectize-control.single .selectize-input input {
-  cursor: pointer;
-  z-index: auto;
-}
-
-
-.selectize-input {
-   z-index: auto !important;
-}
-
-#selector_var {
-  margin-top: -5% !important;
-}
-
 

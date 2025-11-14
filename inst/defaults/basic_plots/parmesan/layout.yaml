@@ -1,3 +1,17 @@
+data:
+  label: Data
+  inputs:
+    - agg
+    - percentage
+    - datalabel_show
+    - sort
+    - slice_n
+    - bar_orientation
+    - bar_graph_type
+    - map_tiles
+    - sankey_node_opacity
+    - sankey_link_opacity
+    - stopwords_language
 titles:
   label: titles
   description: title_info
@@ -12,19 +26,6 @@ colors:
   inputs:
     - color_palette_type
     - color_palette
-chart:
-  label: chart
-  inputs:
-    - agg
-    - percentage
-    - datalabel_show
-    - sort
-    - slice_n
-    - bar_orientation
-    - bar_graph_type
-    - map_tiles
-    - sankey_node_opacity
-    - sankey_link_opacity
-    - stopwords_language
+
 
 
