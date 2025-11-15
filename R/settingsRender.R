@@ -32,8 +32,16 @@ settings_render <- function(id, r) {
 
         # Iconos SVG para cada sección
         icons <- list(
-          data = "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><ellipse cx='12' cy='6' rx='8' ry='2'></ellipse><path d='M4 6v12c0 1.1 3.6 2 8 2s8-.9 8-2V6'></path><path d='M4 10v8c0 1.1 3.6 2 8 2s8-.9 8-2v-8'></path></svg>",
-          titles = "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><line x1='4' y1='7' x2='20' y2='7'></line><line x1='4' y1='12' x2='20' y2='12'></line><line x1='4' y1='17' x2='20' y2='17'></line></svg>",
+          data = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+<path fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" stroke-opacity="1" stroke-miterlimit="4" d="M 9 6 C 12.726562 6 15.75 4.992188 15.75 3.75 C 15.75 2.507812 12.726562 1.5 9 1.5 C 5.273438 1.5 2.25 2.507812 2.25 3.75 C 2.25 4.992188 5.273438 6 9 6 Z M 9 6 "/>
+<path fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" stroke-opacity="1" stroke-miterlimit="4" d="M 2.25 3.75 L 2.25 14.25 C 2.25 14.847656 2.960938 15.417969 4.226562 15.839844 C 5.492188 16.261719 7.210938 16.5 9 16.5 C 10.789062 16.5 12.507812 16.261719 13.773438 15.839844 C 15.039062 15.417969 15.75 14.847656 15.75 14.25 L 15.75 3.75 "/>
+<path fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" stroke-opacity="1" stroke-miterlimit="4" d="M 2.25 9 C 2.25 9.597656 2.960938 10.167969 4.226562 10.589844 C 5.492188 11.011719 7.210938 11.25 9 11.25 C 10.789062 11.25 12.507812 11.011719 13.773438 10.589844 C 15.039062 10.167969 15.75 9.597656 15.75 9 "/>
+</svg>',
+          titles = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M9 3V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M3 5.25V3.75C3 3.55109 3.07902 3.36032 3.21967 3.21967C3.36032 3.07902 3.55109 3 3.75 3H14.25C14.4489 3 14.6397 3.07902 14.7803 3.21967C14.921 3.36032 15 3.55109 15 3.75V5.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M6.75 15H11.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>',
           colors = "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='13.5' cy='6.5' r='.5' fill='currentColor'></circle><circle cx='17.5' cy='10.5' r='.5' fill='currentColor'></circle><circle cx='8.5' cy='7.5' r='.5' fill='currentColor'></circle><circle cx='6.5' cy='12.5' r='.5' fill='currentColor'></circle><path d='M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z'></path></svg>"
         )
 
@@ -77,26 +85,23 @@ settings_render <- function(id, r) {
     palette_colors <- reactive({
       req(r$data)
       org <- r$org
-      list(
-        categorical = dsthemer_palette(org,  palette = "categorical") |> unlist(),
-        sequential = dsthemer_palette(org,  palette = "sequential") |> unlist(),
-        divergening = dsthemer_palette(org,  palette = "divergening") |> unlist()
-      )
+      palette_types <- c("categorical", "sequential", "divergening")
+      purrr::map(palette_types, function(palette) {
+        dsthemer_palette(org, palette = palette) |> unlist()
+      }) |>
+        purrr::set_names(palette_types)
     })
 
     colors_list <- reactive({
       req(r$data)
       req(palette_colors())
       palette_colors <- palette_colors()
-      lc <- purrr::map(names(palette_colors), function(palette) {
-        colors <- palette_colors[[palette]]
+      purrr::imap(palette_colors, function(colors, palette) {
         as.character(div(purrr::map(colors, function(color) {
           div(style = paste0("width: 20px; height: 20px; display: inline-block; background-color:",
                              color, ";"))
         })))
       })
-      names(lc) <- names(palette_colors)
-      lc
     })
 
 
@@ -144,20 +149,21 @@ settings_render <- function(id, r) {
       }
 
 
-      for (section in names(parmesan)) {
-        if (!is.null(parmesan[[section]]$inputs) && length(parmesan[[section]]$inputs) > 0) {
-          for (input_def in parmesan[[section]]$inputs) {
+      purrr::walk(names(parmesan), function(section) {
+        section_inputs <- parmesan[[section]]$inputs
+        if (!is.null(section_inputs) && length(section_inputs) > 0) {
+          purrr::walk(section_inputs, function(input_def) {
             if (!is.null(input_def$input_params)) {
-              for (param in names(input_def$input_params)) {
-                param_value <- input_def$input_params[[param]]
-                # Actualizar valores reactivos si son funciones ()
-                if (!is.null(param_value) && is.character(param_value) && length(param_value) == 1 && grepl("\\(\\)$", param_value)) {
+              # Actualizar valores reactivos si son funciones ()
+              purrr::iwalk(input_def$input_params, function(param_value, param) {
+                if (!is.null(param_value) && is.character(param_value) &&
+                    length(param_value) == 1 && grepl("\\(\\)$", param_value)) {
                   param_name <- gsub("\\(\\)$", "", param_value)
                   if (!is.null(r[[param_name]])) {
-                    input_def$input_params[[param]] <- r[[param_name]]
+                    input_def$input_params[[param]] <<- r[[param_name]]
                   }
                 }
-              }
+              })
               # actualiza los inputs update... segun el widget
               if (!is.null(input[[input_def$id]])) {
                 if (!any(grepl("\\(\\)$", input[[input_def$id]]))) {
@@ -165,14 +171,14 @@ settings_render <- function(id, r) {
                 }
               }
             }
-          }
+          })
         }
-      }
+      })
     })
 
     observeEvent(input$color_palette, {
       if (!identical(input$color_palette, "agg_palette()")) {
-        colors <- lapply(input$color_palette, function(x) list(x))
+        colors <- purrr::map(input$color_palette, function(x) list(x))
         if (!identical(r$agg_palette, colors)) {
           r$agg_palette <- colors
         }
@@ -182,88 +188,84 @@ settings_render <- function(id, r) {
     # Función auxiliar para renderizar inputs de una sección
     render_section_inputs <- function(section_name) {
       section_data <- parmesan[[section_name]]
-      input_list <- list()
 
       # Verificar si la sección tiene inputs
-      if (!is.null(section_data$inputs) && length(section_data$inputs) > 0) {
-        # Procesar cada input y agregar el tooltip al widget
-        section_inputs <- lapply(as.list(section_data$inputs), function(input_def) {
-          if (is.null(input_def$input_params)) return(NULL)
-
-          input_params <- input_def$input_params
-
-          if (!is.null(input_params)) {
-            # Reemplazar valores específicos de los parámetros si es necesario
-            for (param in names(input_params)) {
-
-              param_value <- dstextui::translate(input_params[[param]], r$config_lang)
-              if (!is.null(param_value) && is.character(param_value) && length(param_value) == 1 && grepl("\\(\\)$", param_value)) {
-                param_name <- gsub("\\(\\)$", "", param_value)
-                if (!is.null(r[[param_name]])) {
-                  input_params[[param]] <- r[[param_name]]
-                }
-              }
-
-              if (!is.null(r_parmesan$params[[input_def$id]])) {
-                if (input_def$id != "color_palette") {
-                  param_update <- parmesan_updates[[input_def$input_type]]$update_param
-                  input_params[[param_update]] <- r_parmesan$params[[input_def$id]]
-                }
-              }
-            }
-          }
-
-          widget_tooltip <- if (!is.null(input_def$description)) {
-            paste0(
-              "<span class='tooltip-theme'>
-            <i class='fa fa-info-circle'></i>
-            <span class='tooltiptext'>", dstextui::translate(input_def$description, r$config_lang), "</span>
-          </span>"
-            )
-          } else {
-            ""
-          }
-          input_params$label <- HTML(paste(dstextui::translate(input_params$label, r$config_lang), widget_tooltip))
-          show_widget <- TRUE
-          if (!is.null(input_def$show_if)) {
-            param_condition <- gsub("\\(\\)$", "", input_def$show_if)
-            show_widget <- r[[param_condition]] %||% TRUE
-          }
-
-          if ("choices" %in% names(input_params)) {
-            names(input_params$choices) <- dstextui::translate(names(input_params$choices), r$config_lang)
-          }
-
-          if (show_widget) {
-            div(
-              class = "widget-container",
-              do.call(input_def$input_type, c(list(inputId = ns(input_def$id)), input_params))
-            )
-          } else {
-            return(NULL)
-          }
-        })
-
-        # Filtrar NULLs y agregar a la lista
-        section_inputs <- Filter(Negate(is.null), section_inputs)
-        if (length(section_inputs) > 0) {
-          input_list <- append(input_list, section_inputs)
-        }
+      if (is.null(section_data$inputs) || length(section_data$inputs) == 0) {
+        return(tagList())
       }
 
-      do.call(tagList, input_list)
+      # Procesar cada input y agregar el tooltip al widget
+      section_inputs <- purrr::map(section_data$inputs, function(input_def) {
+        if (is.null(input_def$input_params)) return(NULL)
+
+        input_params <- input_def$input_params
+
+        if (!is.null(input_params)) {
+          # Reemplazar valores específicos de los parámetros si es necesario
+          input_params <- purrr::imap(input_params, function(param_value, param) {
+            translated_value <- dstextui::translate(param_value, r$config_lang)
+            if (!is.null(translated_value) && is.character(translated_value) &&
+                length(translated_value) == 1 && grepl("\\(\\)$", translated_value)) {
+              param_name <- gsub("\\(\\)$", "", translated_value)
+              if (!is.null(r[[param_name]])) {
+                return(r[[param_name]])
+              }
+            }
+            param_value
+          })
+
+          # Actualizar parámetros desde r_parmesan$params
+          if (!is.null(r_parmesan$params[[input_def$id]]) && input_def$id != "color_palette") {
+            param_update <- parmesan_updates[[input_def$input_type]]$update_param
+            input_params[[param_update]] <- r_parmesan$params[[input_def$id]]
+          }
+        }
+
+        widget_tooltip <- if (!is.null(input_def$description)) {
+          paste0(
+            "<span class='tooltip-theme'>
+          <i class='fa fa-info-circle'></i>
+          <span class='tooltiptext'>", dstextui::translate(input_def$description, r$config_lang), "</span>
+        </span>"
+          )
+        } else {
+          ""
+        }
+        input_params$label <- HTML(paste(dstextui::translate(input_params$label, r$config_lang), widget_tooltip))
+        show_widget <- if (!is.null(input_def$show_if)) {
+          param_condition <- gsub("\\(\\)$", "", input_def$show_if)
+          r[[param_condition]] %||% TRUE
+        } else {
+          TRUE
+        }
+
+        if ("choices" %in% names(input_params)) {
+          names(input_params$choices) <- dstextui::translate(names(input_params$choices), r$config_lang)
+        }
+
+        if (show_widget) {
+          div(
+            class = "widget-container",
+            do.call(input_def$input_type, c(list(inputId = ns(input_def$id)), input_params))
+          )
+        } else {
+          NULL
+        }
+      }) |>
+        purrr::discard(is.null)
+
+      do.call(tagList, section_inputs)
     }
 
     # Crear renderUI para cada sección
-    for (section in names(parmesan)) {
+    purrr::walk(names(parmesan), function(section_name) {
       local({
-        section_name <- section
         output[[paste0("section_", section_name)]] <- renderUI({
           req(r$data)
           render_section_inputs(section_name)
         })
       })
-    }
+    })
 
 
     observe({
