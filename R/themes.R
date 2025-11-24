@@ -15,12 +15,30 @@ dsthemer <- function(org, theme = "light") {
 
 
 #' @export
-dsthemer_palette <- function(org, theme = "light", palette = NULL){
+dsthemer_palette <- function(org = NULL, palette = NULL, viz = NULL, n_cat = NULL, color_by = NULL, theme = "light"){
+
+  n_colors <- 6
+  if (!is.null(viz)) {
+  if (viz %in% c("bar", "line")) {
+    if (!n_cat) {
+      n_colors <- 1
+    }
+    if (viz == "bar") {
+      if (!is.null(color_by)) {
+        n_colors <- 6
+      }
+    }
+  }
+  }
+
+
   l <- load_dsthemer_json(org)
   palette <- palette %||% "categorical"
   palette <- paste0("color_palette_", palette)
-  l[[theme]]$palettes[[palette]]
+  colors <- l[[theme]]$palettes[[palette]][1:n_colors]
+  colors
 }
+
 
 
 #' @export
